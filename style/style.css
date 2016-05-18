@@ -1,3 +1,6 @@
 .img-full {
     width: 100%;
 }
+.row-padding {
+    padding-bottom: 15px;
+}
