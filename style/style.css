@@ -1,6 +1,10 @@
 .img-full {
     width: 100%;
 }
+.img-vertical {
+    width: 60%;
+    float: right;
+}
 .row-padding {
     padding-bottom: 15px;
 }
