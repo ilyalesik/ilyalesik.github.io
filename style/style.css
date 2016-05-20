@@ -8,3 +8,11 @@
 .row-padding {
     padding-bottom: 15px;
 }
+.torn-separator {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    padding-right: 20px;
+    height: 50px;
+    background: url("../img/diff-torn-edge.png");
+    margin-bottom: 15px;
+}
