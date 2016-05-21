@@ -16,3 +16,9 @@
     background: url("../img/diff-torn-edge.png");
     margin-bottom: 15px;
 }
+.black-color {
+	background-color: black;
+}
+.white-text {
+	color: white;
+}
