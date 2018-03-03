@@ -1,0 +1,7 @@
+.idea/
+*.aux
+*.pdf
+*.log
+*.gz
+target/
+logs/
