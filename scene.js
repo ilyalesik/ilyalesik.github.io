@@ -8,8 +8,9 @@ function createScene(scene) {
         var xMid, text;
         var textShape = new THREE.BufferGeometry();
         var color = 0x006699;
-        var matDark = new THREE.LineBasicMaterial( {
-            color: color,
+        var color1 = 0xFF0000;
+        var matDark = new THREE.MeshBasicMaterial( {
+            color: color1,
             side: THREE.DoubleSide
         } );
         var matLite = new THREE.MeshBasicMaterial( {
@@ -18,8 +19,8 @@ function createScene(scene) {
             opacity: 0.4,
             side: THREE.DoubleSide
         } );
-        var message = "   Three.js\nSimple text.";
-        var shapes = font.generateShapes( message, 1, 2 );
+        var message = "8 march";
+        var shapes = font.generateShapes( message, 0.5, 4 );
         var geometry = new THREE.ShapeGeometry( shapes );
         geometry.computeBoundingBox();
         xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
@@ -27,7 +28,8 @@ function createScene(scene) {
         // make shape ( N.B. edge view not visible )
         textShape.fromGeometry( geometry );
         text = new THREE.Mesh( textShape, matLite );
-        text.position.y	= geometry.parameters.height/2;
+        var h = geometry.parameters.height/2;
+        text.position.y	= h;
         scene.add( text );
         // make line shape ( N.B. edge view remains visible )
         var holeShapes = [];
