@@ -4,7 +4,7 @@ function createScene(scene) {
 
 
     var loader = new THREE.FontLoader();
-    loader.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+    loader.load( 'fonts/OpenSans_Regular.json', function ( font ) {
         var xMid, text;
         var textShape = new THREE.BufferGeometry();
         var color = 0x006699;
@@ -14,8 +14,8 @@ function createScene(scene) {
             opacity: 0.8,
             side: THREE.DoubleSide
         } );
-        var message = "8 march";
-        var shapes = font.generateShapes( message, 0.5, 20 );
+        var message = "8 марта";
+        var shapes = font.generateShapes( message, 0.5, 40 );
         var geometry = new THREE.ShapeGeometry( shapes );
         geometry.computeBoundingBox();
         xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
