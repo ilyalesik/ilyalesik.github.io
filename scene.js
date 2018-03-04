@@ -4,7 +4,7 @@ function createScene(scene) {
 
 
     var loader = new THREE.FontLoader();
-    loader.load( 'fonts/ProximaNovaRg_Regular.json', function ( font ) {
+    loader.load( 'fonts/OpenSans_Regular.json', function ( font ) {
         var xMid, text;
         var textShape = new THREE.BufferGeometry();
         var color = 0x006699;
@@ -15,7 +15,7 @@ function createScene(scene) {
             side: THREE.DoubleSide
         } );
         var message = "8 марта";
-        var shapes = font.generateShapes( message, 0.5, 80 );
+        var shapes = font.generateShapes( message, 0.5, 20 );
         var geometry = new THREE.ShapeGeometry( shapes );
         geometry.computeBoundingBox();
         xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
