@@ -108,7 +108,11 @@
 	//		add an object in the scene
 	//////////////////////////////////////////////////////////////////////////////////
 	// add a torus knot	
-    createScene(scene);
+    createScene(scene).then(function (mesh) {
+        onRenderFcts.push(function(delta){
+	    	mesh.rotation.x += Math.PI*delta
+	    })
+    });
 	/*onRenderFcts.push(function(delta){
 		mesh.rotation.x += Math.PI*delta
 	})*/
