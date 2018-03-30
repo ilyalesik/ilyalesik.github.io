@@ -22,3 +22,37 @@
 	font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
 	font-weight: 300;
 }
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+}
+
+.button {
+	border-radius: 3px;
+    padding: 0.25em 1em;
+    margin: 0 0.5em;
+    background: transparent;
+    color: palevioletred;
+    border: 2px solid palevioletred;
+    font-size: 1.5rem;
+}
+
+.button__primary {
+	background: palevioletred;
+    color: white;
+}
+
+.code-browser-container {
+	display: flex;
+}
+
+.code-browser-container > .styled-code {
+	flex: 2;
+}
+
+.code-browser-container > .browser-mockup {
+	margin-left: 1em;
+	flex: 1.5;
+}

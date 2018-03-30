@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
 	<link rel="stylesheet" href="./style.css">
 	<link href="./prism.css" rel="stylesheet" />
+	<link href="./browser-mockup.css" rel="stylesheet" />
 </head>
 <body class="shower list">
 	<script src="prism.js"></script>
@@ -52,6 +53,53 @@
 	</section>
 
 	<section class="slide">
+		<h2>Как это выглядит</h2>
+		<pre class="language-jsx styled-code" id="example1"></pre>
+		<script type="text/javascript">
+		const code1 = (`const Button = styled.button\`
+  border-radius: 3px;
+  padding: 0.25em 1em;
+  margin: 0 1em;
+  background: transparent;
+  color: palevioletred;
+  border: 2px solid palevioletred;
+
+  \$\{props => props.primary && css\`
+    background: palevioletred;
+    color: white;
+  \`\}
+\`;`);
+		var html = Prism.highlight(code1, Prism.languages.jsx, 'jsx');
+        document.getElementById("example1").innerHTML = html;
+		</script>
+	</section>
+
+	<section class="slide">
+		<h2>Как это выглядит</h2>
+		<div class="code-browser-container">
+		<pre class="language-jsx styled-code" id="example2"></pre>
+		<script type="text/javascript">
+	const code2 = (`const Component = () => (
+	<div>
+		<Button>Normal Button</Button>
+		<Button primary>Primary Button</Button>
+	</div>
+);`);
+		var html = Prism.highlight(code2, Prism.languages.jsx, 'jsx');
+        document.getElementById("example2").innerHTML = html;
+		</script>
+
+		<div class="browser-mockup">
+  			<div class="button-container">
+				<button class="button">Normal Button</button>
+				<button class="button button__primary">Primary Button</button>
+			</div>
+		</div>
+	</div>
+		
+	</section>
+
+	<section class="slide">
 		<h2>А может, не надо?</h2>
 		<figure>
 			<blockquote>
@@ -74,7 +122,7 @@
 
 	<section class="slide">
 		<h2>DRY</h2>
-		<pre class="language-jsx styled-code" id="code1"></pre>
+		<pre class="language-jsx styled-code" id="animation-code"></pre>
 		<script type="text/javascript">
 		const code = (`    const duration = 500;
 
@@ -90,7 +138,7 @@
     }
         `);
 		var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
-        document.getElementById("code1").innerHTML = html;
+        document.getElementById("animation-code").innerHTML = html;
 		</script>
 	</section>
 
