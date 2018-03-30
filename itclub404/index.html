@@ -73,15 +73,21 @@
 	</section>
 
 	<section class="slide">
-		<h2>Переносимость кода</h2>
-		<pre class="styled-code" id="code1"></pre>
+		<h2>DRY</h2>
+		<pre class="language-jsx styled-code" id="code1"></pre>
 		<script type="text/javascript">
-		const code = (`
-        const Button = styled.a\`
-            display: inline-block;
-            border-radius: 3px;
-            padding: 0.5rem 0;
-        \`;
+		const code = (`    const duration = 500;
+
+    const Element = styled.div\`
+        ...
+        transition: transform \$\{duration\};
+    \`;
+
+    class SomeComponent extends Component {
+    	componentDidMount() {
+    		this.startAnimation(duration);
+    	}
+    }
         `);
 		var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
         document.getElementById("code1").innerHTML = html;
