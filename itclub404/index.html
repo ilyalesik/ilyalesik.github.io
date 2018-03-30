@@ -74,15 +74,15 @@
 
 	<section class="slide">
 		<h2>Переносимость кода</h2>
-		<div id="code1"></div>
+		<pre class="styled-code" id="code1"></pre>
 		<script type="text/javascript">
 		const code = (`
-            const Button = styled.a\`
-              display: inline-block;\n
-              border-radius: 3px;\n
-              padding: 0.5rem 0;\n
-            \`;
-            `);
+        const Button = styled.a\`
+            display: inline-block;
+            border-radius: 3px;
+            padding: 0.5rem 0;
+        \`;
+        `);
 		var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
         document.getElementById("code1").innerHTML = html;
 		</script>

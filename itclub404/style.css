@@ -6,9 +6,20 @@
 }
 
 .slide .first-slide__paragraph {
+
 	margin:10px 0 0;
 	text-align:center;
 	color:#FFF;
 	font-style:italic;
 	font-size:20px;
+}
+
+.styled-code {
+	background: #f5f2f0;
+	white-space: pre-wrap !important;
+	width: 50%;
+
+	font-size: 1rem;
+	font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+	font-weight: 300;
 }
