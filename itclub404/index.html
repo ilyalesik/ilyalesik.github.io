@@ -7,8 +7,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
 	<link rel="stylesheet" href="./style.css">
+	<link href="./prism.css" rel="stylesheet" />
 </head>
 <body class="shower list">
+	<script src="prism.js"></script>
+	<script>
+	Prism.languages.insertBefore('jsx', 'template-string', {
+  'styled-template-string': {
+    pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes|\.extend)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
+    lookbehind: true,
+    greedy: true,
+    inside: {
+      interpolation: {
+        pattern: /\$\{[^}]+\}/,
+        inside: {
+          'interpolation-punctuation': {
+            pattern: /^\$\{|\}$/,
+            alias: 'punctuation'
+          },
+          rest: languages.jsx
+        }
+      },
+      string: {
+        pattern: /[^$;]+/,
+        inside: languages.css,
+        alias: 'language-css'
+      }
+    }
+  }
+})
+	</script>
 
 	<header class="caption">
 		<h1>Вся правда о CSS-in-JS</h1>
@@ -44,9 +72,38 @@
 		</ol>
 	</section>
 
+	<section class="slide">
+		<h2>Переносимость кода</h2>
+		<div id="code"></div>
+		<script type="text/javascript">
+		const code = (`
+const Button = styled.a\`
+  /* This renders the buttons above... Edit me! */
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  /* The GitHub button is a primary button
+   * edit this to target it specifically! */
+  \${props => props.primary && css\`
+    background: white;
+    color: palevioletred;
+  \`}
+\`
+`).trim();
+		var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
+
+		</script>
+	</section>
+
 	<div class="progress"></div>
 
 	<script src="shower/shower.min.js"></script>
+	
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
 
 </body>
