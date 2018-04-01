@@ -137,3 +137,21 @@ ul.minus-list > li:lang(ru)::before {
 .plus-minus-slide h2 {
 	margin-bottom: 4px;
 }
+
+.ide-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+
+	margin-top: 2.5rem;
+}
+
+.ide-list__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ide-list__item > img {
+	height: 120px;
+}
