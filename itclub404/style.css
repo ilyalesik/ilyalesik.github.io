@@ -80,3 +80,11 @@
 .disclaimer-slide h2 {
 	margin-bottom: 4px;
 }
+
+pre.dom-output code {
+	font-size: 20px;
+}
+
+.slide .p-without-margin {
+	margin-bottom: 0;
+}
