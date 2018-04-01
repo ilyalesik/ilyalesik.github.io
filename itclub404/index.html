@@ -84,6 +84,7 @@
 		var html = Prism.highlight(code1, Prism.languages.jsx, 'jsx');
         document.getElementById("example1").innerHTML = html;
 		</script>
+		<p class="note">Выражения <span class="inline-js">fn`some string here`;</span> называются Tagged Template Literal</p>
 	</section>
 
 	<section class="slide">
@@ -118,6 +119,37 @@
 	</section>
 
 	<section class="slide">
+		<h2>Расширение стилей</h2>
+		<div class="code-browser-container">
+		<pre class="language-jsx styled-code" id="example3"></pre>
+		<script type="text/javascript">
+	const code3 = (`const Button = styled.button\`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+\`;
+
+const TomatoButton = Button.extend\`
+  color: tomato;
+  border-color: tomato;
+\`;`);
+		var html = Prism.highlight(code3, Prism.languages.jsx, 'jsx');
+        document.getElementById("example3").innerHTML = html;
+		</script>
+
+		<div class="browser-mockup">
+  			<div class="button-container">
+				<button class="button">Normal Button</button>
+				<button class="button button__tomato">Tomato Button</button>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<section class="slide">
 		<h2>А может, не надо?</h2>
 		<figure>
 			<blockquote>
@@ -129,18 +161,49 @@
 
 	<section class="slide">
 		<h2>В чем профит?</h2>
-		<ol>
-			<li>Более удобная навигация по коду</li>
-			<li>Проще конфигурировать (webpack, node.js)</li>
-			<li>Code-splitting стилей из коробки</li>
-			<li>Изоляция стилей</li>
-			<li>Более переносимый код</li>
-		</ol>
+		<ul class="plus-list">
+			<li>Более лаконичный код</li>
+			<div class="code-compare">
+				<div class="code-compare__example1">
+					<span>React + classnames</span>
+				<pre class="language-jsx styled-code" id="example-compare-1"></pre>
+			</div>
+				<span class="code-compare__splitter">vs</span>
+				<div class="code-compare__example2">
+					<span>React + Styled Components</span>
+				<pre class="language-jsx styled-code " id="example-compare-2"></pre>
+			</div>
+			</div>
+		</ul>
+		<script type="text/javascript">
+	const exampleCompare1 = (`<li 
+	key={city.id}
+	className={classNames("citySelect_item", {
+	"-current": currentCityId === city.id
+	})}>
+	{city.name}
+</li>
+`);
+		var html1 = Prism.highlight(exampleCompare1, Prism.languages.jsx, 'jsx');
+        document.getElementById("example-compare-1").innerHTML = html1;
+
+        const exampleCompare2 = (`<CitySelectItem 
+    key={city.id}
+	current={currentCityId === city.id}>
+	{city.name}
+</CitySelectItem>
+`);
+		var html2 = Prism.highlight(exampleCompare2, Prism.languages.jsx, 'jsx');
+        document.getElementById("example-compare-2").innerHTML = html2;
+		</script>
 	</section>
 
 	<section class="slide">
-		<h2>DRY</h2>
-		<pre class="language-jsx styled-code" id="animation-code"></pre>
+		<ul class="plus-list">
+			<li>Общий код у CSS и у JS</li>
+		</ul>
+		<pre class="language-jsx styled-code" 
+					id="animation-code"></pre>
 		<script type="text/javascript">
 		const code = (`    const duration = 500;
 
@@ -158,6 +221,21 @@
 		var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
         document.getElementById("animation-code").innerHTML = html;
 		</script>
+	</section>
+
+	<section class="slide plus-minus-slide">
+		<h2>Еще плюсы:</h2>
+		<ul class="plus-list">
+			<li>Проще конфигурировать (webpack, node.js)</li>
+			<li>Изоляция стилей</li>
+			<li>Переносимый код</li>
+			<li>Code-splitting стилей при использовании SSR</li>
+		</ul>
+		<h2>Есть и недостатки:</h2>
+		<ul class="minus-list">
+			<li>Более сложный debug</li>
+			<li>Нет source-maps, либо нет выгрузки в CSS-файл</li>
+		</ul>
 	</section>
 
 	<div class="progress"></div>

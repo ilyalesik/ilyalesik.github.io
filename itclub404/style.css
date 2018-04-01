@@ -44,6 +44,11 @@
     color: white;
 }
 
+.button__tomato {
+	color: tomato;
+  	border-color: tomato;
+}
+
 .code-browser-container {
 	display: flex;
 }
@@ -87,4 +92,48 @@ pre.dom-output code {
 
 .slide .p-without-margin {
 	margin-bottom: 0;
+}
+
+.inline-js {
+	font-family: "Operator Mono SSm A","Operator Mono SSm B",monospace;
+	font-weight: 300;
+	color: black;
+}
+
+.code-compare {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.code-compare__splitter {
+	margin: 8px;
+}
+
+.code-compare__example1 {
+	flex: 1;
+}
+
+.code-compare__example2 {
+	flex: 1;
+	align-self: flex-start;
+}
+
+ul.plus-list > li:lang(ru)::before {
+	content: "+";
+	padding-right: .7em;
+    font-size: 1.8rem;
+    width: 1.8em;
+}
+
+ul.minus-list > li:lang(ru)::before {
+	content: "-";
+	    padding-right: .7em;
+    font-size: 1.8rem;
+    width: 1.8em;
+}
+
+.plus-minus-slide h2 {
+	margin-bottom: 4px;
 }
