@@ -56,3 +56,27 @@
 	margin-left: 1em;
 	flex: 1.5;
 }
+
+.disclaimer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.disclaimer__img  {
+	height: 20rem;
+}
+
+.disclaimer__plus {
+	font-size: 4rem;
+	margin: 1rem;
+}
+
+.disclaimer__styled-components {
+	background: #db9d5f;
+	margin-left: 2rem;
+}
+
+.disclaimer-slide h2 {
+	margin-bottom: 4px;
+}
