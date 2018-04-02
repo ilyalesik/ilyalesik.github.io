@@ -14,6 +14,11 @@
 	font-size:20px;
 }
 
+.ttl-note {
+    font-size: 23px;
+}
+
+
 .styled-code {
 	background: #f5f2f0;
 	white-space: pre-wrap !important;
@@ -176,4 +181,31 @@ ul.minus-list > li:lang(ru)::before {
 
 .zeplin-slide {
 	padding: 64px 100px 0;
+}
+
+.function-compare-slide table th {
+     text-align: center;
+     font-weight: normal;
+     font-size: 20px;
+ }
+
+.function-compare-slide table tr:not(:last-of-type)>* {
+    background: transparent;
+}
+
+.function-compare-slide table td {
+    text-align: center;
+
+
+    border-bottom: solid 1px rgba(88,90,94,.5);
+}
+
+
+
+.function-compare-slide table td:nth-child(2n) {
+    background: rgba(230, 230, 230, 0.7)
+}
+
+.function-compare-slide table th:nth-child(2n) {
+    background: rgba(230, 230, 230, 0.7)
 }

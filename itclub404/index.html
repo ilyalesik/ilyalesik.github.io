@@ -84,7 +84,7 @@
 		var html = Prism.highlight(code1, Prism.languages.jsx, 'jsx');
         document.getElementById("example1").innerHTML = html;
 		</script>
-		<p class="note">Выражения <span class="inline-js">fn`some string here`;</span> называются Tagged Template Literal</p>
+		<p class="note ttl-note">Выражения <span class="inline-js">fn`some string here`;</span> называются Tagged Template Literal</p>
 	</section>
 
 	<section class="slide">
@@ -281,6 +281,92 @@ const TomatoButton = Button.extend\`
 			</video>
 		</div>
 
+	</section>
+
+	<section class="slide function-compare-slide">
+		<h2>Сравнение библиотек</h2>
+		<table>
+			<thead>
+			<tr>
+				<th align="center">Package</th>
+				<th align="center">As Object</th>
+				<th align="center">As TL</th>
+				<th>RN Support</th>
+				<th>Agnostic</th>
+				<th>Dynamic</th>
+				<th>Babel plugins</th>
+				<th>Stars</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td align="center"><a href="https://github.com/emotion-js/emotion">emotion</a></td>
+				<td align="center">+</td>
+				<td align="center">+</td>
+				<td></td>
+				<td>+</td>
+				<td>+</td>
+				<td>+</td>
+				<td>3179</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="https://github.com/cssinjs/jss">JSS</a></td>
+				<td align="center">+</td>
+				<td align="center">+</td>
+				<td></td>
+				<td>+</td>
+				<td>+</td>
+				<td>+</td>
+				<td>3303</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="https://github.com/styled-components/styled-components">styled-components</a></td>
+				<td align="center"></td>
+				<td align="center">+</td>
+				<td>+</td>
+				<td></td>
+				<td>+</td>
+				<td>+</td>
+				<td>15110</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="https://github.com/Khan/aphrodite">aphrodite</a></td>
+				<td align="center">+</td>
+				<td align="center"></td>
+				<td></td>
+				<td>+</td>
+				<td></td>
+				<td></td>
+				<td>3971</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="https://github.com/threepointone/glamor">glamor</a></td>
+				<td align="center"></td>
+				<td align="center">+</td>
+				<td></td>
+				<td>+</td>
+				<td></td>
+				<td>+</td>
+				<td>3036</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="center"><a href="https://github.com/rtsao/styletron">styletron</a></td>
+				<td align="center">+</td>
+				<td align="center"></td>
+				<td></td>
+				<td>+</td>
+				<td>+</td>
+				<td></td>
+				<td>2414</td>
+				<td></td>
+			</tr>
+			</tbody></table>
 	</section>
 
 	<div class="progress"></div>
