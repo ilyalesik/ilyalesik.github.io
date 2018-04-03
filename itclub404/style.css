@@ -56,6 +56,7 @@
 
 .code-browser-container {
 	display: flex;
+	align-items: center;
 }
 
 .code-browser-container > .styled-code {
@@ -217,4 +218,9 @@ ul.minus-list > li:lang(ru)::before {
 .function-compare-slide table td.cell-good {
 	background: #00ff0040;
 	border-bottom: solid 1px green;
+}
+
+.styled-link {
+	color: palevioletred !important;
+	font-weight: bold;
 }

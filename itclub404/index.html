@@ -150,7 +150,37 @@ const TomatoButton = Button.extend\`
 	</section>
 
 	<section class="slide">
-		Styling any components?
+		<h2>Стилизация существующих компонентов</h2>
+		<div class="code-browser-container">
+			<pre class="language-jsx styled-code" id="example4"></pre>
+			<script type="text/javascript">
+                const code4 = (`const Link = ({ className, children }) => (
+  <a className={className}>
+    {children}
+  </a>
+)
+
+const StyledLink = styled(Link)\`
+  color: palevioletred;
+  font-weight: bold;
+\`;
+
+const Component = () => <div>
+    <Link>Unstyled, boring Link</Link>
+    <StyledLink>Styled Link</StyledLink>
+  </div>;
+`);
+                var html = Prism.highlight(code4, Prism.languages.jsx, 'jsx');
+                document.getElementById("example4").innerHTML = html;
+			</script>
+
+			<div class="browser-mockup">
+				<div class="button-container">
+					<a>Unstyled, boring Link</a>
+					<a class="styled-link">Styled, exciting Link</a>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<section class="slide">
@@ -433,6 +463,7 @@ const TomatoButton = Button.extend\`
 			</tr>
 			</tbody>
 		</table>
+		<a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">https://github.com/A-gambit/CSS-IN-JS-Benchmarks</a>
 	</section>
 
 	<div class="progress"></div>
