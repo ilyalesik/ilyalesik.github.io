@@ -106,6 +106,14 @@ pre.dom-output code {
 	font-size: 20px;
 }
 
+.dom-output__add {
+	background: #00ff0015;
+}
+
+.dom-output__classname {
+	background: #0000ff15;
+}
+
 .slide .p-without-margin {
 	margin-bottom: 0;
 }

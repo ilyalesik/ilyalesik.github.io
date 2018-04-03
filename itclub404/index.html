@@ -88,11 +88,30 @@
 	</section>
 
 	<section class="slide">
+		<p class="p-without-margin">Стили будут добавлены в <a href="http://blog.frankmtaylor.com/2013/10/15/exploring-the-cssom-making-a-css-object-analyzer/">CSSOM</a> с помощью вызова <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule">insertRule(...)</a></p>
+		<br />
+		<pre class="dom-output">
+			<code>&lt;style type="text/css"&gt;</code>
+<code>  <span class="dom-output__classname">.eIxVkz</span> { border-radius: 3px; padding: 0.25em 1em; margin: 0 1em;
+    background: transparent; color: palevioletred; 
+    border: 2px solid palevioletred; }</code>
+<code>  <span class="dom-output__classname">.kqEuGv</span> { border-radius: 3px;padding: 0.25em 1em; margin: 0 1em;
+	background: transparent; color: palevioletred;
+    border: 2px solid palevioletred;
+    <span class="dom-output__add">background:palevioletred; color:white;</span> }</code>
+<code>&lt;/style&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Что такое CSS-in-JS</h2>
+		<br />
 		<div class="code-browser-container">
 		<pre class="language-jsx styled-code" id="example2"></pre>
 		<script type="text/javascript">
-	const code2 = (`const Component = () => (
+	const code2 = (`import Button from './Button';
+
+const Component = () => (
 	<div>
 		<Button>Normal Button</Button>
 		<Button primary>Primary Button</Button>
@@ -109,13 +128,7 @@
 			</div>
 		</div>
 	</div>
-	<p class="p-without-margin">Стили будут добавлены в <a href="http://blog.frankmtaylor.com/2013/10/15/exploring-the-cssom-making-a-css-object-analyzer/">CSSOM</a> с помощью вызова <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule">insertRule(...)</a></p>
-		<pre class="dom-output">
-			<code>&lt;style type="text/css"&gt;</code>
-<code>  .eIxVkz{border-radius:3px;...}</code>
-<code>  .kqEuGv{border-radius:3px;...;background:palevioletred;color:white;}</code>
-<code>&lt;/style&gt;</code>
-		</pre>
+	<p class="note">Можем использовать Button как обычный React-компонент</p>
 	</section>
 
 	<section class="slide">
@@ -263,7 +276,7 @@ const Component = () => <div>
 			<li>Проще конфигурировать (webpack, node.js)</li>
 			<li>Изоляция стилей</li>
 			<li>Переносимый код</li>
-			<li>Code-splitting стилей при использовании SSR</li>
+			<li>Легко реализовать theming</li>
 		</ul>
 		<h2>Есть и недостатки:</h2>
 		<ul class="minus-list">
@@ -304,7 +317,7 @@ const Component = () => <div>
 	</section>
 
 	<section class="slide zeplin-slide">
-		<a href="https://github.com/redisca/zeplin-styled-components">https://github.com/redisca/zeplin-styled-components</a>
+		<a href="https://github.com/redisca/zeplin-styled-components">github.com/redisca/zeplin-styled-components</a>
 		<div class="screen">
 			<video class="screen-video" playsInline autoPlay loop muted>
 				<source src="./pictures/zeplin3.mp4" type="video/mp4"/>
@@ -463,7 +476,7 @@ const Component = () => <div>
 			</tr>
 			</tbody>
 		</table>
-		<a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">https://github.com/A-gambit/CSS-IN-JS-Benchmarks</a>
+		<a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">github.com/A-gambit/CSS-IN-JS-Benchmarks</a>
 	</section>
 
 	<section class="slide zeplin-slide">
