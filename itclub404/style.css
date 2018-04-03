@@ -18,6 +18,15 @@
     font-size: 23px;
 }
 
+.end-slide {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
 
 .styled-code {
 	background: #f5f2f0;
@@ -236,4 +245,8 @@ ul.minus-list > li:lang(ru)::before {
 	left: 50%;
 	transform: translateX(-50%);
 	font-size: 20px;
+}
+
+.qr {
+	box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.28);
 }
