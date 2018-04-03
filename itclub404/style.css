@@ -66,6 +66,7 @@
 .code-browser-container > .browser-mockup {
 	margin-left: 1em;
 	flex: 1.5;
+	border-radius: 3px;
 }
 
 .disclaimer {
@@ -169,6 +170,10 @@ ul.minus-list > li:lang(ru)::before {
 	margin-top: 40px;
 }
 
+.screen__without-margin {
+	margin-top: 0;
+}
+
 .screen-video {
 	width: 90%;
 	border-radius: 4px;
@@ -223,4 +228,12 @@ ul.minus-list > li:lang(ru)::before {
 .styled-link {
 	color: palevioletred !important;
 	font-weight: bold;
+}
+
+.video-title {
+	bottom: 28px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 20px;
 }
