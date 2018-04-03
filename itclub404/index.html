@@ -369,6 +369,72 @@ const TomatoButton = Button.extend\`
 			</tbody></table>
 	</section>
 
+	<section class="slide function-compare-slide">
+		<h3>Производительность</h3>
+		<table>
+			<thead>
+			<tr>
+				<th align="center">Package</th>
+				<th align="center">Use CSS</th>
+				<th align="center">Use Inline-Styles</th>
+				<th>Mount Time (ms)</th>
+				<th>Rerender time (ms)</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td align="center">react (with inline-styles)</td>
+				<td align="center">-</td>
+				<td align="center">+</td>
+				<td>28.7</td>
+				<td>51.53</td>
+			</tr>
+			<tr>
+				<td align="center">react + css</td>
+				<td align="center">+</td>
+				<td align="center">+</td>
+				<td>38</td>
+				<td>76.34</td>
+			</tr>
+			<tr>
+				<td align="center">emotion</td>
+				<td align="center">+</td>
+				<td align="center">-</td>
+				<td>102.5</td>
+				<td>107.06</td>
+			</tr>
+			<tr>
+				<td align="center">JSS</td>
+				<td align="center">+</td>
+				<td align="center">-</td>
+				<td class="cell-bad">310.3</td>
+				<td class="cell-bad">340.36</td>
+			</tr>
+			<tr>
+				<td align="center">styled-components (v3.1.6)</td>
+				<td align="center">+</td>
+				<td align="center">-</td>
+				<td>133.73</td>
+				<td>109.17</td>
+			</tr>
+			<tr>
+				<td align="center">aphrodite</td>
+				<td align="center">+</td>
+				<td align="center">+</td>
+				<td class="cell-good">38.05</td>
+				<td class="cell-good">62.39</td>
+			</tr>
+			<tr>
+				<td align="center">styletron</td>
+				<td align="center">+</td>
+				<td align="center">-</td>
+				<td>75.6</td>
+				<td>90.18</td>
+			</tr>
+			</tbody>
+		</table>
+	</section>
+
 	<div class="progress"></div>
 
 	<script src="shower/shower.min.js"></script>
