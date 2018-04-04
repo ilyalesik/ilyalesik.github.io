@@ -258,3 +258,24 @@ ul.minus-list > li:lang(ru)::before {
 .qr {
 	box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.28);
 }
+
+.tema-comparison {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.tema-comparison__item {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tema-comparison__item > p {
+    text-align: center;
+}
+
+.tema-comparison__item > img {
+    width: 100%;
+}
