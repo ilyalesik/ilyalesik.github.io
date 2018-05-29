@@ -1,0 +1,52 @@
+{
+  "name": "Styled components",
+  "description": "Sample extension description.",
+  "version": "0.1.0",
+  "options": [
+    {
+      "name": "Color format",
+      "type": "picker",
+      "id": "colorFormat",
+      "submenu": true,
+      "options": [
+        {
+          "name": "Default",
+          "value": "default"
+        },
+        {
+          "name": "HEX",
+          "value": "hex"
+        },
+        {
+          "name": "RGB",
+          "value": "rgb"
+        },
+        {
+          "name": "HSL",
+          "value": "hsl"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "name": "Dimensions",
+      "type": "switch",
+      "id": "showDimensions",
+      "default": true
+    },
+    {
+      "name": "Default values",
+      "type": "switch",
+      "id": "showDefaultValues",
+      "default": true
+    },
+    {
+      "name": "Default tag",
+      "type": "text",
+      "id": "defaultTag",
+      "default": "div"
+    }
+  ],
+  "moduleURL": "./main.fb2b16ed.js",
+  "readmeURL": "./README.md"
+}
