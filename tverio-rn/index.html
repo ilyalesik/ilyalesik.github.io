@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Мобильные приложения на чистом JS</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="./style.css">
+	<link href="./prism.css" rel="stylesheet" />
+</head>
+<body class="shower list">
+	<script src="prism.js"></script>
+	<script>
+	Prism.languages.insertBefore('jsx', 'template-string', {
+  'styled-template-string': {
+    pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes|\.extend)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
+    lookbehind: true,
+    greedy: true,
+    inside: {
+      interpolation: {
+        pattern: /\$\{[^}]+\}/,
+        inside: {
+          'interpolation-punctuation': {
+            pattern: /^\$\{|\}$/,
+            alias: 'punctuation'
+          },
+          rest: Prism.languages.jsx
+        }
+      },
+      string: {
+        pattern: /[^$;]+/,
+        inside: Prism.languages.css,
+        alias: 'language-css'
+      }
+    }
+  }
+})
+	</script>
+
+	<header class="caption">
+		<h1>Мобильные приложения на чистом JS</h1>
+		<p>Ilya Lesik</p>
+	</header>
+
+	<section class="slide first-slide">
+		<h2 class="first-slide__header">Мобильные приложения на чистом JS</h2>
+		<p class="first-slide__paragraph">Илья Лесик</p>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
