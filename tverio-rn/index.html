@@ -64,7 +64,26 @@
 		<div class="jsx-slide_container">
 
 			<div>
-				Самый обычный JSX
+				<pre class="language-jsx styled-code" id="example1"></pre>
+				<script type="text/javascript">
+                    const code1 = (`import React, { Component } from 'react';
+import {Text, View, Image} from 'react-native';
+
+class Hello extends Component {
+  render() {
+    return (
+      <View>
+        <Text>
+          Hello, tver.io!
+        </Text>
+        <Image source={require("./logo.png")} />
+      </View>
+    );
+  }
+}`);
+                    var html = Prism.highlight(code1, Prism.languages.jsx, 'jsx');
+                    document.getElementById("example1").innerHTML = html;
+				</script>
 			</div>
 
 			<div class="iphone-container">
@@ -76,7 +95,10 @@
 					<div class="sensor"></div>
 					<div class="speaker"></div>
 					<div class="screen">
-						<!-- Content goes here -->
+						<div class="screen-wrapper">
+							<span class="screen-wrapper_text">Hello, tver.io!</span>
+							<img class="tverio-logo" src="./pictures/tverio.jpg" />
+						</div>
 					</div>
 					<div class="home"></div>
 					<div class="bottom-bar"></div>
