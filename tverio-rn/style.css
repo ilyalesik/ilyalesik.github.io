@@ -57,6 +57,7 @@
 .stylization-slide_button {
     padding: 10px;
     text-align: center;
-    background-color: #DDDDDD;
+    background-color: #4d90fe;
+    color: white;
     width: 100%;
 }

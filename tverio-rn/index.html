@@ -118,17 +118,16 @@ class Hello extends Component {
 				<script type="text/javascript">
                     const code2 = (`class Component extends Component {
   render() {
-    return (
-        <TouchableHighlight style={styles.button}>
+    return <TouchableHighlight style={styles.button}>
 			<Text>Кнопка</Text>
-		</TouchableHighlight>
-    );
+		</TouchableHighlight>;
   }
 }
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: '#DDDDDD',
+    backgroundColor: '#4D90FE',
+    color: '#FFFFFF',
     padding: 10
   }
 })
