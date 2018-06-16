@@ -43,3 +43,20 @@
 .screen-wrapper_text {
     font-size: 40px;
 }
+
+.stylization-slide_code {
+    transform: translateY(-20px);
+}
+
+.stylization-slide_screen-wrapper {
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.stylization-slide_button {
+    padding: 10px;
+    text-align: center;
+    background-color: #DDDDDD;
+    width: 100%;
+}

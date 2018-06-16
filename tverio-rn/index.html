@@ -108,6 +108,59 @@ class Hello extends Component {
 		</div>
 	</section>
 
+	<section class="slide stylization-slide">
+		<h2>Стилизация</h2>
+
+		<div class="jsx-slide_container">
+
+			<div class="stylization-slide_code">
+				<pre class="language-jsx styled-code" id="example2"></pre>
+				<script type="text/javascript">
+                    const code2 = (`class Component extends Component {
+  render() {
+    return (
+        <TouchableHighlight style={styles.button}>
+			<Text>Кнопка</Text>
+		</TouchableHighlight>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10
+  }
+})
+`);
+                    var html = Prism.highlight(code2, Prism.languages.jsx, 'jsx');
+                    document.getElementById("example2").innerHTML = html;
+				</script>
+			</div>
+
+			<div class="iphone-container">
+				<div class="marvel-device iphone5s silver">
+					<div class="top-bar"></div>
+					<div class="sleep"></div>
+					<div class="volume"></div>
+					<div class="camera"></div>
+					<div class="sensor"></div>
+					<div class="speaker"></div>
+					<div class="screen">
+						<div class="screen-wrapper stylization-slide_screen-wrapper">
+							<div class=" stylization-slide_button">
+								Кнопка
+							</div>
+						</div>
+					</div>
+					<div class="home"></div>
+					<div class="bottom-bar"></div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
 	<section class="slide">
 		<h2>Для презентации использованы</h2>
 		<ul>
