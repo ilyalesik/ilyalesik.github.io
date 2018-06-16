@@ -1,0 +1,23 @@
+.slide .first-slide__header {
+    margin: 30px 0 0;
+    text-align: center;
+    font-size: 70px;
+}
+
+.slide .first-slide__paragraph {
+    margin: 10px 0 0;
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.iphone-container {
+    transform: scale(0.6) translateY(-100px) translateX(30%);
+    transform-origin: top;
+}
+
+.jsx-slide_container {
+    display: flex;
+    justify-content: space-between;
+
+}
