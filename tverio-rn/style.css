@@ -80,3 +80,65 @@
     color: white;
     font-size: 40px;
 }
+
+.bridge-scheme {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.bridge-scheme_realm {
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.bridge-scheme_realm__blue {
+    background: #4b86c2;
+}
+
+.bridge-scheme_realm__dark-grey {
+    background: #5d5d5d;
+}
+
+.bridge-scheme_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.double-arrow {
+    display: flex;
+    align-items: center;
+}
+
+:root {
+    --double-arrow-size: 60px;
+    --double-arrow-color: #a1a1a1;
+}
+
+.double-arrow_left-arrow {
+    width: 0;
+    height: 0;
+    border-top: var(--double-arrow-size) solid transparent;
+    border-bottom: var(--double-arrow-size) solid transparent;
+
+    border-right: var(--double-arrow-size) solid var(--double-arrow-color);
+}
+
+.double-arrow_right-arrow {
+    width: 0;
+    height: 0;
+    border-top: var(--double-arrow-size) solid transparent;
+    border-bottom: var(--double-arrow-size) solid transparent;
+
+    border-left: var(--double-arrow-size) solid var(--double-arrow-color);
+}
+
+.double-arrow_rectangle {
+    padding: 0px 40px;
+    background: var(--double-arrow-color);
+    color: white;
+}
+

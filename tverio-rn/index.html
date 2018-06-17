@@ -109,6 +109,46 @@ class Hello extends Component {
 	</section>
 
 	<section class="slide">
+		<h2>Архитектура</h2>
+		<div class="bridge-scheme">
+			<div>
+				<div class="bridge-scheme_realm bridge-scheme_realm__blue">
+					JavaScript
+				</div>
+			</div>
+			<div>
+				<div class="double-arrow">
+					<div class="double-arrow_left-arrow"></div>
+					<div class="double-arrow_rectangle">
+						Bridge
+					</div>
+					<div class="double-arrow_right-arrow"></div>
+				</div>
+			</div>
+			<div>
+				<div class="bridge-scheme_realm bridge-scheme_realm__dark-grey">
+					Native
+				</div>
+			</div>
+			<div>
+				<div class="bridge-scheme_list">
+					<span>JavaScript</span>
+					<span>JSCore (VM)</span>
+					<span>Single Thread</span>
+				</div>
+			</div>
+			<div></div>
+			<div>
+				<div class="bridge-scheme_list">
+					<span>ObjC + Swift / Java</span>
+					<span>Main UI Thread</span>
+					<span>Other BG Threads</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="slide">
 		<h2>Станадртные компоненты</h2>
 		<table>
 			<tr>
