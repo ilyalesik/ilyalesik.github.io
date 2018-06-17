@@ -308,6 +308,22 @@ const styles = StyleSheet.create({
 	</section>
 
 	<section class="slide">
+		<h2>Платформо-специфичный код</h2>
+		<div>
+			<pre class="language-jsx styled-code" id="example4"></pre>
+			<script type="text/javascript">
+                const code4 = (`import {Platform, StyleSheet} from 'react-native';
+
+const styles = StyleSheet.create({
+  height: Platform.OS === 'ios' ? 200 : 100,
+});`);
+                var html = Prism.highlight(code4, Prism.languages.jsx, 'jsx');
+                document.getElementById("example4").innerHTML = html;
+			</script>
+		</div>
+	</section>
+
+	<section class="slide">
 		<h2>Нюансы</h2>
 		<ol>
 			<li>Разработчики на React легко могут начать использовать React Native. Другие члены команды могут оказаться не готовы к разработке мобильных приложений. В особенности дизайнеры, проектировщики.</li>
