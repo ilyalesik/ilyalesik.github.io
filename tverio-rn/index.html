@@ -311,14 +311,23 @@ const styles = StyleSheet.create({
 		<h2>Платформо-специфичный код</h2>
 		<div>
 			<pre class="language-jsx styled-code" id="example4"></pre>
+			<div>Расширения файлов .ios.js, .android.js</div>
+			<div>Пример: BigButton.ios.js, BigButton.android.js</div>
+			<pre class="language-jsx styled-code" id="example5"></pre>
+			В зависимости от платформы будет импортирован соответствующий файл.
 			<script type="text/javascript">
                 const code4 = (`import {Platform, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   height: Platform.OS === 'ios' ? 200 : 100,
 });`);
+
+                const code5 = (`const BigButton = require('./BigButton');`);
                 var html = Prism.highlight(code4, Prism.languages.jsx, 'jsx');
                 document.getElementById("example4").innerHTML = html;
+
+                var html1 = Prism.highlight(code5, Prism.languages.jsx, 'jsx');
+                document.getElementById("example5").innerHTML = html1;
 			</script>
 		</div>
 	</section>
