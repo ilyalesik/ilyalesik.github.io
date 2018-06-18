@@ -152,3 +152,14 @@
     width: 100%;
 }
 
+.play-video-button {
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px  solid transparent;
+
+    border-left: 12px  solid #585a5e;
+
+    display: inline-block;
+}
+

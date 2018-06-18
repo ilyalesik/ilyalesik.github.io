@@ -333,12 +333,13 @@ const styles = StyleSheet.create({
 	</section>
 
 	<section class="slide">
-		<h2>Процесс разработки</h2>
+		<h2>Процесс разработки <div id="video-1-button" class="play-video-button"></div></h2>
 		<div class="jsx-slide_container">
 			<div>
-				<video class="screen-video" playsInline autoPlay loop muted>
+				<video id="screen-video-1" class="screen-video" playsInline loop muted>
 					<source src="./pictures/rn-run-device.mp4" type="video/mp4"/>
 				</video>
+				XCode
 			</div>
 			<div>
 				<div class="iphone-container">
@@ -350,7 +351,7 @@ const styles = StyleSheet.create({
 						<div class="sensor"></div>
 						<div class="speaker"></div>
 						<div class="screen">
-							<video class="ios-video" playsInline autoPlay loop muted>
+							<video id="ios-video-1" class="ios-video" playsInline loop muted>
 								<source src="./pictures/ios-run-dev.mp4" type="video/mp4"/>
 							</video>
 						</div>
@@ -360,6 +361,52 @@ const styles = StyleSheet.create({
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+            document.getElementById("video-1-button").addEventListener( "click" , function() {
+                document.getElementById("screen-video-1").play();
+                document.getElementById("ios-video-1").play();
+			});
+		</script>
+	</section>
+
+	<section class="slide">
+		<h2>Hot Module Replacement <div id="video-2-button" class="play-video-button"></div></h2>
+		<div class="jsx-slide_container">
+			<div>
+				<video id="screen-video-2" class="screen-video" playsInline loop muted>
+					<source src="./pictures/webstrorm-hmr.mp4" type="video/mp4"/>
+				</video>
+				WebStorm (или что-нибудь другое)
+			</div>
+			<div>
+				<div class="iphone-container">
+					<div class="marvel-device iphone5s silver">
+						<div class="top-bar"></div>
+						<div class="sleep"></div>
+						<div class="volume"></div>
+						<div class="camera"></div>
+						<div class="sensor"></div>
+						<div class="speaker"></div>
+						<div class="screen">
+							<video id="ios-video-2" class="ios-video" playsInline loop muted>
+								<source src="./pictures/ios-hmr.mp4" type="video/mp4"/>
+							</video>
+						</div>
+						<div class="home"></div>
+						<div class="bottom-bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+            document.getElementById("video-2-button").addEventListener( "click" , function() {
+                document.getElementById("screen-video-2").play();
+                setTimeout(() => {
+                    document.getElementById("ios-video-2").play();
+				}, 3700);
+
+            });
+		</script>
 	</section>
 
 	<section class="slide">
