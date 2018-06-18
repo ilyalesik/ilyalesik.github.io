@@ -163,3 +163,17 @@
     display: inline-block;
 }
 
+.components-sheet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+
+.navItem {
+    font-size: 14px;
+}
+
+.navListItem {
+    height: 30px;
+}
+
