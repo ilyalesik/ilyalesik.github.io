@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
 	</section>
 
 	<section class="slide">
-		<h2>Платформо-специфичный код</h2>
+		<h2>Специфика платформы</h2>
 		<div>
 			<pre class="language-jsx styled-code" id="example4"></pre>
 			<div>Расширения файлов .ios.js, .android.js</div>
@@ -421,6 +421,17 @@ const styles = StyleSheet.create({
 				</ul>
 			</li>
 		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Известные проблемы</h2>
+		<ul>
+			<li>Нельзя собрать под Android 64bit</li>
+			<li>Под iOS нельзя использовать JIT для JS</li>
+			<li>В целом, поддержка iOS лучше, чем Android</li>
+			<li>Может тормозить из-за bridge</li>
+			<li>NavigatorIOS (полоска навигации) нарушает соглашения React</li>
+		</ul>
 	</section>
 
 	<section class="slide">
