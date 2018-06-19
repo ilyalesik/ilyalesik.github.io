@@ -168,6 +168,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
+
+    margin-bottom: 40px;
 }
 
 .navItem {
@@ -178,3 +180,12 @@
     height: 30px;
 }
 
+.react-like_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.react-like_platform {
+    font-weight: bold;
+}
