@@ -189,3 +189,40 @@
 .react-like_platform {
     font-weight: bold;
 }
+
+.react-like_icon {
+    width: 1rem;
+    height: 1rem;
+
+    display: inline-block;
+}
+
+.react-like_icon__android {
+    background: url("./pictures/android.svg");
+    background-size: contain;
+}
+
+.react-like_icon__ios {
+    background: url("./pictures/apple.svg");
+    background-size: contain;
+}
+
+.our-app_container {
+    display: flex;
+    justify-content: center;
+}
+
+.our-app_container_iphone {
+    transform: scale(0.5) translateX(50%);
+    transform-origin: top;
+    margin-left: -182px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-app_container_iphone:not(:last-child) {
+    margin-right: 50px;
+}
+
