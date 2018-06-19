@@ -153,14 +153,15 @@
 }
 
 .play-video-button {
-    width: 0;
-    height: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 12px  solid transparent;
-
-    border-left: 12px  solid #585a5e;
+    width: 26px;
+    height: 26px;
+    background: url("./pictures/play_button.svg");
 
     display: inline-block;
+}
+
+.play-video-button:hover {
+    opacity: 0.5;
 }
 
 .components-sheet {
