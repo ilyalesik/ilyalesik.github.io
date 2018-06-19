@@ -63,7 +63,7 @@
 
 		<div class="jsx-slide_container">
 
-			<div>
+			<div class="stylization-slide_code">
 				<pre class="language-jsx styled-code" id="example1"></pre>
 				<script type="text/javascript">
                     const code1 = (`import React, { Component } from 'react';
@@ -555,6 +555,12 @@ const styles = StyleSheet.create({
 		<h2>Известные проблемы</h2>
 		<ul>
 			<li>Нельзя собрать под Android 64bit</li>
+			<li>JSC на Android версии от ноября 2014 года
+				<ul>
+					<li>{order && order.count} может крашнуть приложение</li>
+					<li>Symbol не поддерживается</li>
+				</ul>
+			</li>
 			<li>Под iOS нельзя использовать JIT для JS</li>
 			<li>В целом, поддержка iOS лучше, чем Android</li>
 			<li>Может тормозить из-за bridge</li>
