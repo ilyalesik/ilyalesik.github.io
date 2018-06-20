@@ -557,6 +557,42 @@ const styles = StyleSheet.create({
 		</script>
 	</section>
 
+    <section class="slide">
+        <h2>Отладка</h2>
+        <div class="jsx-slide_container">
+            <div>
+                <img src="./pictures/react-native-debugger.png" class="screen-video" />
+                React Native Debugger
+            </div>
+            <div>
+                <div class="iphone-container">
+                    <div class="marvel-device iphone5s silver">
+                        <div class="top-bar"></div>
+                        <div class="sleep"></div>
+                        <div class="volume"></div>
+                        <div class="camera"></div>
+                        <div class="sensor"></div>
+                        <div class="speaker"></div>
+                        <div class="screen">
+                            <img class="ios-video" src="./pictures/inspector.png" />
+                        </div>
+                        <div class="home"></div>
+                        <div class="bottom-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("video-2-button").addEventListener( "click" , function() {
+                document.getElementById("screen-video-2").play();
+                setTimeout(() => {
+                    document.getElementById("ios-video-2").play();
+                }, 3700);
+
+            });
+        </script>
+    </section>
+
 	<section class="slide">
 		<h2>Нюансы</h2>
 		<ol>
