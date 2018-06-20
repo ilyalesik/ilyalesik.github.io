@@ -153,9 +153,9 @@ class Hello extends Component {
 		<table>
 			<tr>
 				<th scope="col">Компонент</th>
-				<th>Аналог в web</th>
-				<th>iOS</th>
-				<th>Android</th>
+				<th>Web</th>
+				<th><div class="react-like_icon react-like_icon__ios"></div> iOS</th>
+				<th><div class="react-like_icon react-like_icon__android"></div> Android</th>
 			</tr>
 			<tr>
 				<th scope="row">View</th>
@@ -166,9 +166,27 @@ class Hello extends Component {
 			<tr>
 				<th scope="row">Text</th>
 				<td>span</td>
-				<td>?</td>
-				<td>?</td>
+				<td>UITextView</td>
+				<td>android.widget.TextView</td>
 			</tr>
+            <tr>
+                <th scope="row">FlatList</th>
+                <td>ul</td>
+                <td>UIStackView</td>
+                <td>android.widget.ListView</td>
+            </tr>
+            <tr>
+                <th scope="row">Image</th>
+                <td>img</td>
+                <td>UIImageView</td>
+                <td>android.widget.ImageView</td>
+            </tr>
+            <tr>
+                <th scope="row">TouchableHighlight</th>
+                <td>button</td>
+                <td>UIControl</td>
+                <td>android.view.TouchDelegate</td>
+            </tr>
 		</table>
 	</section>
 
@@ -651,15 +669,11 @@ const styles = StyleSheet.create({
 	</section>
 
 	<section class="slide">
-		<h2>Выводы</h2>
+		<h2>Дальнейшее развитие</h2>
 		<ul>
-			<li>Планируем сделать дальше:
-				<ul>
-					<li>Анимации</li>
-					<li>PUSH Notifications</li>
-				</ul>
-			</li>
-			<li>React Native способствует быстрому feature delivery</li>
+            <li>PUSH Notifications</li>
+            <li>Дизайн в соотвествии с гайдлайнами</li>
+		    <li>Анимации</li>
 		</ul>
 	</section>
 
