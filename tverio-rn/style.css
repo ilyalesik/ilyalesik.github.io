@@ -191,6 +191,11 @@
     font-size: 14px;
 }
 
+.navListItem > .react-like_icon {
+    transform: translateY(2px);
+    margin-left: 2px;
+}
+
 .navListItem {
     height: 30px;
 }
@@ -217,8 +222,18 @@
     background-size: contain;
 }
 
+.react-like_icon__android-blue {
+    background: url("./pictures/android-blue.svg");
+    background-size: contain;
+}
+
 .react-like_icon__ios {
     background: url("./pictures/apple.svg");
+    background-size: contain;
+}
+
+.react-like_icon__ios-blue {
+    background: url("./pictures/apple-blue.svg");
     background-size: contain;
 }
 
@@ -239,5 +254,12 @@
 
 .our-app_container_iphone:not(:last-child) {
     margin-right: 50px;
+}
+
+.end-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
