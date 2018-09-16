@@ -1,0 +1,110 @@
+/* visual styles */
+
+body {
+  font-family: Helvetica, serif;
+  padding: 50px;
+  background: #636363;
+}
+
+.header {
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 15px 0 rgba(0,0,0,0.09);  
+    padding: 33px 40px 28px 28px;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.header__logo {
+    width: 76px;
+    height: 76px;
+    background: url("https://ilyalesik.github.io/tverio-flex-grid/assets/tverio.jpg") no-repeat center;
+  background-size: contain;
+}
+
+.header__hamburger {
+    width: 53px;
+    height: 53px;
+    opacity: 0.2;
+    border-radius: 50%;
+    border: solid 2px #525252;
+  
+    background: url("https://ilyalesik.github.io/tverio-flex-grid/assets/gumburger-big.svg") no-repeat center;
+    background-size: 38px;
+    outline: none;
+    cursor: pointer;
+    margin-left: 44px;
+}
+
+.header__menu_text {
+  margin-left: 12px;
+  font-weight: bold;
+}
+
+.header__phone {
+  white-space: no-wrap;
+  font-size: 20px;
+  text-align: end
+}
+
+.header__call_button {
+    margin-left: 45px;
+    color: #525252;
+    background-color: rgba(155,155,155,0);
+    border: solid 2px rgba(82,82,82,0.2);
+    width: 194px;
+    height: 45px;
+    border-radius: 100px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.header__appointment_button {
+    margin-left: 19px;
+    color: #ffffff;
+    background-color: #0f97ad;
+    box-shadow: 0 10px 15px 0 #0f97ad39;
+    border: none;
+    width: 194px;
+    height: 45px;
+    border-radius: 100px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.header__search_button {
+    width: 26px;
+    height: 26px;
+    margin-left: 26px;
+  
+    border: none;
+    background: url("https://ilyalesik.github.io/tverio-flex-grid/assets/search.svg") no-repeat center;
+}
+
+@media (max-width: 1130px) {
+  .header {
+    padding: 14px 27px 10px 27px;
+  }
+  .header__hamburger {
+    margin-left: 0;
+  }
+  
+  .header__search_button {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+  }
+  
+  .header {
+    padding: 9px 14px 12px 11px;
+    border-radius: 0;
+  }
+  
+  .header__appointment_button {
+    margin-top: 10px;
+  }
+}
