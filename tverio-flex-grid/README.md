@@ -1,5 +1,5 @@
 1. flex: 1
-2. Кейс шапки доброго доктора (order и т.п.)
+2. Сложная шапка
 - https://codepen.io/ilialesik/pen/vzaMNG
 - https://codepen.io/ilialesik/pen/ZMMERr?editors=1100
 надо постараться отделить верстку лейаута от стилей блоков
