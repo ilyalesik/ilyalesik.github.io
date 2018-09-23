@@ -4,7 +4,9 @@
 2. Сложная шапка
 - https://codepen.io/ilialesik/pen/vzaMNG
 - https://codepen.io/ilialesik/pen/ZMMERr?editors=1100
-3. Раскладка блога https://codepen.io/ilialesik/pen/JaVayE?editors=1100
+3. Раскладка блога 
+- https://codepen.io/ilialesik/pen/ZMZMxb?editors=1100
+- https://codepen.io/ilialesik/pen/JaVayE?editors=1100
 4. Невозможный кейс: пинтерест
 
 Ссылки
