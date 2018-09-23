@@ -13,4 +13,4 @@
 Ссылки
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-
+- [10 Creative Examples of CSS Grid in Action](https://speckyboy.com/creative-examples-css-grid-layouts/)
