@@ -7,7 +7,8 @@
 3. Раскладка блога 
 - https://codepen.io/ilialesik/pen/ZMZMxb?editors=1100
 - https://codepen.io/ilialesik/pen/JaVayE?editors=1100
-4. Невозможный кейс: пинтерест
+4. Фильтр + карточки в три колонки + пагинация
+5. Невозможный кейс: пинтерест
 
 Ссылки
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
