@@ -1,0 +1,11 @@
+
+.container_center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2__center {
+    text-align: center;
+}

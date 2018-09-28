@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Shower Presentation Engine</h1>
+        <p>Yours Truly, Famous Inc.</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Shower Presentation Engine</h2>
+        <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+        <figure>
+            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+            <figcaption class="copyright right white">
+                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+            </figcaption>
+        </figure>
+        <style>
+            #cover h2 {
+                margin: 30px 0 0;
+                color: white;
+                text-align: center;
+                font-size: 70px;
+            }
+
+            #cover p {
+                margin: 10px 0 0;
+                text-align: center;
+                color: white;
+                font-style: italic;
+                font-size: 20px;
+            }
+
+            #cover p a {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <div class="container_center">
+            <h2 class="h2__center">Кейс: одинаковое фиксированное расстояние между блоками</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Селектор "мертвая сова"</h2>
+        <p data-height="265" data-theme-id="0" data-slug-hash="wxZYxN" data-default-tab="result" data-user="ilialesik" data-pen-title="Fixed space between flexbox items" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/wxZYxN/">Fixed space between flexbox items</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    </section>
+
+    <section class="slide">
+        <h2>grid-auto-flow</h2>
+        <p data-height="265" data-theme-id="0" data-slug-hash="WggMzB" data-default-tab="result" data-user="ilialesik" data-pen-title="Equal size between items (grid)" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/WggMzB/">Equal size between items (grid)</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
