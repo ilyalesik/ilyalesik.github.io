@@ -1,0 +1,76 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background: #00000030;
+    padding: 20px;
+}
+
+.filter {
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    background: white;
+}
+
+.checkbox__input {
+    width: 12px;
+    height: 12px;
+    border: solid 2px black;
+    opacity: 0.5;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox + .checkbox {
+    margin-top: 10px;
+}
+
+.checkbox__label {
+    margin: 3px 0  0 12px;
+}
+
+.product_card {
+    padding: 20px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product_card__image {
+    height: 250px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.product_card__text {
+    margin: 0;
+    text-align: center;
+}
+
+.product_card__text + .product_card__text {
+    margin-top: 6px;
+}
+
+.pagination__arrow {
+    width: 40px;
+    height: 40px;
+    background: url("https://ilyalesik.github.io/tverio-flex-grid/assets/right.svg") center no-repeat;
+
+    border: solid 2px black;
+    border-radius: 50%;
+}
+
+.pagination__arrow--left {
+    transform: rotate(180deg);
+}
+
+.pagination {
+    display: flex;
+}
+
+.pagination > * + * {
+    margin-left: 30px;
+}
