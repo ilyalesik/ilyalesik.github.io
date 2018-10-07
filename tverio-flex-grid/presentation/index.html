@@ -23,12 +23,16 @@
         <h2>Flexbox и Grid: кейсы из реальной жизни</h2>
         <p>Илья Лесик</p>
         <figure>
-            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
+            <div class="cover" >
+                <img class="cover_img" src="pictures/layout.jpg">
+            </div>
         </figure>
         <style>
+            .cover_img {
+                width: 100vw;
+                margin-top: -84px;
+                filter: blur(2px) brightness(0.5);
+            }
             #cover h2 {
                 margin: 30px 0 0;
                 color: white;
