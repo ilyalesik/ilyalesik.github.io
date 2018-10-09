@@ -72,43 +72,12 @@
     </section>
 
     <section class="slide">
-        <div class="container_center">
-            <h2 class="h2__center">Бесит: гайды по CSS Grid</h2>
-        </div>
+        <h2>Бонус</h2>
+        <h3>
+            Firefox >= 63 поддерживает grid-gap для display: flex
+        </h3>
+        <p data-height="265" data-theme-id="0" data-slug-hash="QZpKeq" data-default-tab="css" data-user="ilialesik" data-pen-title="Equal size between items (grid)" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/QZpKeq/">Equal size between items (grid)</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
     </section>
-
-    <section class="slide">
-        <h2>Показывают как сделать Metro UI</h2>
-        <div class="metro">
-            <img class="metro__img" src="pictures/metro.png">
-        </div>
-
-        <style>
-            .metro {
-                display: flex;
-                justify-content: center;
-            }
-            .metro__img {
-                height: 365px;
-            }
-        </style>
-    </section>
-
-    <section class="slide">
-        <h2>Примеры с прямоугольниками</h2>
-        <p data-height="365" data-theme-id="0" data-slug-hash="MqMRaq" data-default-tab="result" data-user="ilialesik" data-pen-title="3 columns, filter, pagination" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/MqMRaq/">3 columns, filter, pagination</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    </section>
-
-    <section class="slide">
-        <h2>...но можно ведь вот так:</h2>
-        <p data-height="365" data-theme-id="0" data-slug-hash="QZwqoZ" data-default-tab="result" data-user="ilialesik" data-pen-title="3 columns, filter, pagination with content" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/QZwqoZ/">3 columns, filter, pagination with content</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    </section>
-
-    <section class="slide">
-        <h2>+ grid-area</h2>
-        <p data-height="365" data-theme-id="0" data-slug-hash="BqoPMP" data-default-tab="result" data-user="ilialesik" data-pen-title="3 columns, filter, pagination with content + areas" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/BqoPMP/">3 columns, filter, pagination with content + areas</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-    </section>
-
 
     <section class="slide">
         <div class="container_center">
@@ -125,6 +94,49 @@
     <section class="slide">
         <h2>Шапка на гридах</h2>
         <p data-height="265" data-theme-id="0" data-slug-hash="ZMMERr" data-default-tab="result" data-user="ilialesik" data-pen-title="Complex header (grid)" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/ZMMERr/">Complex header (grid)</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Как заверстать сложный лейаут</h2>
+        <ul>
+            <li>Постарайтесь не использовать вложенных контейнеров
+                <ul>
+                    <li>.container__left-side, .container__right-side — плохо</li>
+                </ul>
+            </li>
+            <li>Начните с флексов</li>
+            <li>Если больше одной строки, и строки имеют разную конфигурацию — возьмите гриды</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <div class="container_center">
+            <h2 class="h2__center">Типичный кейс для гридов</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Гриды были учтены на дизайне:</h2>
+        <p data-height="365" data-theme-id="0" data-slug-hash="QZwqoZ" data-default-tab="result" data-user="ilialesik" data-pen-title="3 columns, filter, pagination with content" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/QZwqoZ/">3 columns, filter, pagination with content</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="slide">
+        <h2>+ grid-area</h2>
+        <p data-height="365" data-theme-id="0" data-slug-hash="BqoPMP" data-default-tab="result" data-user="ilialesik" data-pen-title="3 columns, filter, pagination with content + areas" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/BqoPMP/">3 columns, filter, pagination with content + areas</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Grid: два подхода</h2>
+        <div class="columns two">
+            <div>
+                <h4>Без grid-area</h4>
+                <p>Больше подходит для раскладок с неизвестным количеством элементов (grid-auto-flow, grid-auto-rows, grid-auto-columns)</p>
+            </div>
+            <div>
+                <h4>С использованием grid-area</h4>
+                <p>Более декларативно: для изменения конфигурации меняем свойства контейнера, а не элементов</p>
+            </div>
+        </div>
     </section>
 
     <section class="slide">
