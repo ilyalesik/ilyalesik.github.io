@@ -74,9 +74,9 @@
     <section class="slide">
         <h2>Бонус</h2>
         <h3>
-            Firefox >= 63 поддерживает grid-gap для display: flex
+            Firefox >= 63 поддерживает [grid-][row-/column-]gap для&nbsp;display: flex;
         </h3>
-        <p data-height="265" data-theme-id="0" data-slug-hash="QZpKeq" data-default-tab="css" data-user="ilialesik" data-pen-title="Equal size between items (grid)" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/QZpKeq/">Equal size between items (grid)</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <p data-height="200" data-theme-id="0" data-slug-hash="QZpKeq" data-default-tab="css" data-user="ilialesik" data-pen-title="Equal size between items (grid)" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/QZpKeq/">Equal size between items (grid)</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
     </section>
 
     <section class="slide">
@@ -99,13 +99,18 @@
     <section class="slide">
         <h2>Как заверстать сложный лейаут</h2>
         <ul>
+            <li>Создайте контейнер и задайте у него display: flex</li>
             <li>Постарайтесь не использовать вложенных контейнеров
                 <ul>
                     <li>.container__left-side, .container__right-side — плохо</li>
                 </ul>
             </li>
-            <li>Начните с флексов</li>
-            <li>Если больше одной строки, и строки имеют разную конфигурацию — возьмите гриды</li>
+            <li>Если больше одной строки, и строки имеют разную конфигурацию — возьмите гриды
+                <ul>
+                    <li>Но помните, что у гридов хуже поддержка (IE >= 11)</li>
+                    <li>Часто достаточно flex-wrap</li>
+                </ul>
+            </li>
         </ul>
     </section>
 
