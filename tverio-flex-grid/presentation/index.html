@@ -81,8 +81,67 @@
 
     <section class="slide">
         <div class="container_center">
-            <h2 class="h2__center">Кейс: адаптируемая шапка</h2>
+            <h2 class="h2__center">Адаптируемая шапка</h2>
         </div>
+    </section>
+
+    <section class="slide">
+        <div class="header_screen_container">
+            <div class="header_screen_container__desktop">
+                <p>Десктоп:</p>
+                <img class="header_screen" src="pictures/header-desktop.png">
+            </div>
+            <div class="header_screen_container__tablet">
+                <p>Планшет:</p>
+                <img class="header_screen" src="pictures/header-tablet.png">
+            </div>
+            <div class="header_screen_container__phone">
+                <p>Телефон:</p>
+                <img class="header_screen" src="pictures/header-phone.png">            
+            </div>
+        </div>        
+        
+        <style>
+            .header_screen {
+                width: 100%;
+            }
+            .header_screen_container {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas: "desktop desktop" "tablet phone";
+                grid-column-gap: 40px;
+            }
+            .header_screen_container__desktop {
+                grid-area: desktop;
+            }
+            .header_screen_container__tablet {
+                grid-area: tablet;
+            }
+            .header_screen_container__phone {
+                grid-area: phone;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <p>Контейнер с элементами</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="ReZOEB" data-default-tab="html,result" data-user="ilialesik" data-pen-title="1. Header without layout" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/ReZOEB/">1. Header without layout</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="slide">
+        <p>Контейнер с элементами</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="ReZOEB" data-default-tab="html,result" data-user="ilialesik" data-pen-title="1. Header without layout" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/ReZOEB/">1. Header without layout</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="slide">
+        <p>Добавим display: flex;</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="oaeOmE" data-default-tab="result" data-user="ilialesik" data-pen-title="2. Header without layout + flex" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/oaeOmE/">2. Header without layout + flex</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="slide">
+        <p>Добавим flex-grow, flex-shrink</p>
+        <p data-height="265" data-theme-id="light" data-slug-hash="WaEWBe" data-default-tab="result" data-user="ilialesik" data-pen-title="3. Header without layout + flex: 1" class="codepen">See the Pen <a href="https://codepen.io/ilialesik/pen/WaEWBe/">3. Header without layout + flex: 1</a> by ilia (<a href="https://codepen.io/ilialesik">@ilialesik</a>) on <a href="https://codepen.io">CodePen</a>.</p>
     </section>
 
     <section class="slide">
