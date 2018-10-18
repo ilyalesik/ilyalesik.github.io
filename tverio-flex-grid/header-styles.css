@@ -41,13 +41,13 @@ body {
   font-weight: bold;
 }
 
-.header__phone {
+.header__title {
   white-space: no-wrap;
   font-size: 20px;
   text-align: end
 }
 
-.header__call_button {
+.header__signup_button {
     margin-left: 45px;
     color: #525252;
     background-color: rgba(155,155,155,0);
@@ -59,7 +59,7 @@ body {
     box-sizing: border-box;
 }
 
-.header__appointment_button {
+.header__signin_button {
     margin-left: 19px;
     color: #ffffff;
     background-color: #0f97ad;
@@ -104,7 +104,7 @@ body {
     border-radius: 0;
   }
   
-  .header__appointment_button {
+  .header__signin_button {
     margin-top: 10px;
   }
 }
