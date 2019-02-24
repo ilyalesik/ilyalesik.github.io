@@ -4,7 +4,9 @@
     <title>Shower Presentation Engine</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="./prism.css" rel="stylesheet" />
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
@@ -12,6 +14,33 @@
     </style>
 </head>
 <body class="shower list">
+    <script src="prism.js"></script>
+    <script>
+        Prism.languages.insertBefore('jsx', 'template-string', {
+            'styled-template-string': {
+                pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes|\.extend)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
+                lookbehind: true,
+                greedy: true,
+                inside: {
+                    interpolation: {
+                        pattern: /\$\{[^}]+\}/,
+                        inside: {
+                            'interpolation-punctuation': {
+                                pattern: /^\$\{|\}$/,
+                                alias: 'punctuation'
+                            },
+                            rest: Prism.languages.jsx
+                        }
+                    },
+                    string: {
+                        pattern: /[^$;]+/,
+                        inside: Prism.languages.css,
+                        alias: 'language-css'
+                    }
+                }
+            }
+        })
+    </script>
 
     <header class="caption">
         <h1>Overridable React components</h1>
@@ -49,15 +78,32 @@
     </section>
 
     <section class="slide">
-        <h2>Shower key features</h2>
-        <ol>
-            <li>Built on HTML, CSS and JavaScript</li>
-            <li>Works in all modern browsers</li>
-            <li>Themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
-        </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+        <h2>The problem</h2>
+    </section>
+
+    <section class="slide">
+        <pre class="language-jsx styled-code" id="example1"></pre>
+        <script type="text/javascript">
+            const code1 = (`import React, {useState} from "react";
+import {Container, Value, OptionsContainer, Option} from "...";
+
+export const Select = (props) => {
+    const {opened, setOpened} = useState(false);
+
+    return <Container onClick={() => setOpened(!opened)}>
+        <Value>{props.currentValue}</Value>
+        {opened && <OptionsContainer>
+            {props.values.map(({label, id}) => (
+                <Option onClick={() => props.onSelect(id)} key={id}>
+                    {label}
+                </Option>
+            ))}
+        </OptionsContainer>}
+    </Container>
+};`);
+            var html = Prism.highlight(code1, Prism.languages.jsx, 'jsx');
+            document.getElementById("example1").innerHTML = html;
+        </script>
     </section>
 
 
