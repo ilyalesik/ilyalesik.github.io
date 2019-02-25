@@ -106,6 +106,25 @@ export const Select = (props) => {
         </script>
     </section>
 
+    <section class="slide">
+        <h2>Хочу прокинуть className в Option. Какие варианты?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Можно просто добавить props в Select:</h2>
+        <pre class="language-jsx styled-code" id="example2"></pre>
+        <script type="text/javascript">
+            const code = (`
+<Option className={props.optionClassName}
+        onClick={() => props.onSelect(id)}
+        key={id}>
+    {label}
+</Option>
+`);
+            var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
+            document.getElementById("example2").innerHTML = html;
+        </script>
+    </section>
 
 
     <div class="progress"></div>
