@@ -39,7 +39,12 @@
                     }
                 }
             }
-        })
+        });
+
+        function insertJSX(el, code) {
+            var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
+            document.getElementById(el).innerHTML = html;
+        }
     </script>
 
     <header class="caption">
@@ -82,9 +87,9 @@
     </section>
 
     <section class="slide">
-        <pre class="language-jsx styled-code" id="example1"></pre>
+        <pre class="language-jsx styled-code" id="example-1"></pre>
         <script type="text/javascript">
-            const code1 = (`import React, {useState} from "react";
+            insertJSX("example-1", `import React, {useState} from "react";
 import {Container, Value, OptionsContainer, Option} from "...";
 
 export const Select = (props) => {
@@ -101,8 +106,7 @@ export const Select = (props) => {
         </OptionsContainer>}
     </Container>
 };`);
-            var html = Prism.highlight(code1, Prism.languages.jsx, 'jsx');
-            document.getElementById("example1").innerHTML = html;
+
         </script>
     </section>
 
@@ -114,15 +118,13 @@ export const Select = (props) => {
         <h2>Можно просто добавить props в Select:</h2>
         <pre class="language-jsx styled-code" id="example2"></pre>
         <script type="text/javascript">
-            const code = (`
+            insertJSX("example2", `
 <Option className={props.optionClassName}
         onClick={() => props.onSelect(id)}
         key={id}>
     {label}
 </Option>
 `);
-            var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
-            document.getElementById("example2").innerHTML = html;
         </script>
     </section>
 
