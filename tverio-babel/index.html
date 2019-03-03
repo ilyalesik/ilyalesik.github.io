@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dive into Babel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="./prism.css" rel="stylesheet" />
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+    <script src="prism.js"></script>
+    <script>
+        Prism.languages.insertBefore('jsx', 'template-string', {
+            'styled-template-string': {
+                pattern: /(styled(\.\w+|\([^\)]*\))(\.\w+(\([^\)]*\))*)*|css|injectGlobal|keyframes|\.extend)`(?:\$\{[^}]+\}|\\\\|\\?[^\\])*?`/,
+                lookbehind: true,
+                greedy: true,
+                inside: {
+                    interpolation: {
+                        pattern: /\$\{[^}]+\}/,
+                        inside: {
+                            'interpolation-punctuation': {
+                                pattern: /^\$\{|\}$/,
+                                alias: 'punctuation'
+                            },
+                            rest: Prism.languages.jsx
+                        }
+                    },
+                    string: {
+                        pattern: /[^$;]+/,
+                        inside: Prism.languages.css,
+                        alias: 'language-css'
+                    }
+                }
+            }
+        });
+
+        function insertJSX(el, code) {
+            var html = Prism.highlight(code, Prism.languages.jsx, 'jsx');
+            document.getElementById(el).innerHTML = html;
+        }
+    </script>
+
+    <header class="caption">
+        <h1>Dive into Babel</h1>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Dive into Babel</h2>
+        <p>Ilya Lesik</p>
+        <figure>
+            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+            <figcaption class="copyright right white">
+                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+            </figcaption>
+        </figure>
+        <style>
+            #cover h2 {
+                margin: 30px 0 0;
+                color: white;
+                text-align: center;
+                font-size: 70px;
+            }
+
+            #cover p {
+                margin: 10px 0 0;
+                text-align: center;
+                color: white;
+                font-style: italic;
+                font-size: 20px;
+            }
+
+            #cover p a {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide slide--center">
+        <h2>Что такое Babel?</h2>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
