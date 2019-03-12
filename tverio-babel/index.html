@@ -100,6 +100,24 @@
         </ol>
     </section>
 
+    <section class="slide slide--center">
+        <h2>Как Babel трансформирует код?</h2>
+    </section>
+
+    <section class="slide">
+        <ol>
+            <li><b>Parse</b>
+                <ol>
+                    <li><b>Lexical Analysis:</b> source code → stream of tokens</li>
+                    <li><b>Syntactic Analysis:</b> stream of tokens → AST</li>
+                </ol>
+            </li>
+            <li class="next"><b>Traverse AST:</b> AST → AST*</li>
+            <li class="next"><b>Generate:</b> AST* → generated code</li>
+        </ol>
+        <p class="note">AST - Abstract Syntax Tree</p>
+    </section>
+
     <div class="progress"></div>
 
     <script src="shower/shower.min.js"></script>
