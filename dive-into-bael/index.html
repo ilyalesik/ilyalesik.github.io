@@ -125,21 +125,100 @@
     </section>
 
     <section class="slide slide--center">
-        <h2>How Babel transform code?</h2>
+        <h2>How Babel compile? </h2>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">Parse → Transform AST → Generate</p>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>1️⃣ Parse</h3>
+        <p>Lexical Analysis + Syntactic Analysis</p>
+    </section>
+
+    <section class="slide slide--center">
+        <h4>Lexical Analysis:</h4>
+        <p>source code → list of tokens</p>
+    </section>
+
+    <section class="slide slide--center">
+        <pre style="font-size: 2em" class="language-jsx styled-code" id="listing-one-plus-one"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-one-plus-one", `1 + 1`);
+        </script>
     </section>
 
     <section class="slide">
-        <ol>
-            <li><b>Parse</b>
-                <ol>
-                    <li><b>Lexical Analysis:</b> source code → stream of tokens</li>
-                    <li><b>Syntactic Analysis:</b> stream of tokens → AST</li>
-                </ol>
-            </li>
-            <li class="next"><b>Traverse AST:</b> AST → AST*</li>
-            <li class="next"><b>Generate:</b> AST* → generated code</li>
-        </ol>
-        <p class="note">AST - Abstract Syntax Tree</p>
+        <p>List of tokens:</p>
+        <pre style="font-size: .85em" class="language-jsx styled-code" id="listing-tokens-list"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-tokens-list", `[
+  { type: { ... }, value: "1", start: 0, end: 1, loc: { ... } },
+  { type: { ... }, value: "+", start: 2, end: 3, loc: { ... } },
+  { type: { ... }, value: "1", start: 4, end: 5, loc: { ... } },
+]`);
+        </script>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: .65em" class="language-jsx styled-code" id="listing-type-field"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-type-field", `{
+  type: {
+    label: 'num', // may be num, string, name, [, ], {, }, (, ), =, && etc.
+    keyword: undefined,
+    beforeExpr: false,
+    startsExpr: true,
+    rightAssociative: false,
+    isLoop: false,
+    isAssign: false,
+    prefix: false,
+    postfix: false,
+    binop: null,
+    updateContext: null
+  },
+  ...
+}`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <h4>Syntactic Analysis:</h4>
+        <p>list of tokens  → AST</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">AST - Abstract Syntax Tree</p>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: .65em" class="language-jsx styled-code" id="listing-ast-example"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-ast-example", `{
+  type: "ExpressionStatement",
+  expression: {
+    type: "BinaryExpression",
+    operator: "+",
+    left: {
+      type: "Literal",
+      value: 1
+    },
+    right: {
+      type: "Literal",
+      value: 1
+    }
+  }
+}`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>AST explorer</h3>
+        <a target="_blank"
+           href="https://bit.ly/2TCLmDx">
+            Demo 🚀
+        </a>
     </section>
 
     <div class="progress"></div>
