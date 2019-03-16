@@ -163,7 +163,7 @@
     </section>
 
     <section class="slide">
-        <pre style="font-size: .65em" class="language-jsx styled-code" id="listing-type-field"></pre>
+        <pre style="font-size: .7em" class="language-jsx styled-code" id="listing-type-field"></pre>
         <script type="text/javascript">
             insertJSX("listing-type-field", `{
   type: {
@@ -194,7 +194,7 @@
     </section>
 
     <section class="slide">
-        <pre style="font-size: .65em" class="language-jsx styled-code" id="listing-ast-example"></pre>
+        <pre style="font-size: .75em" class="language-jsx styled-code" id="listing-ast-example"></pre>
         <script type="text/javascript">
             insertJSX("listing-ast-example", `{
   type: "ExpressionStatement",
@@ -221,6 +221,74 @@
             Demo 🚀
         </a>
     </section>
+
+    <section class="slide slide--center">
+        <h3>2️⃣ Transform AST</h3>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">Traverse the tree 🌳 recursively</p>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>Visitors</h3>
+        <p class="next">Methods defined for accepting particular <b>node types</b> in a tree</p>
+    </section>
+
+    <section class="slide slide--center">
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="listing-my-visitor"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-my-visitor", `const MyVisitor = {
+  BinaryExpression(path) {
+    console.log("Visiting: " + path.node.operator);
+  }
+};`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>Transformation Operations</h3>
+    </section>
+
+    <section class="slide">
+        <h4>Visiting</h4>
+        <ol>
+            <li>Get the Path of Sub-Node</li>
+            <li>Check if a node is a certain type</li>
+            <li>Find a specific <b>parent</b> path</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h4>Transform</h4>
+        <ol>
+            <li>Replacing a node</li>
+            <li>Removing a node</li>
+            <li>Replacing / Removing a parent</li>
+        </ol>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>3️⃣ Generate</h3>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            Generate code from AST
+        </p>
+    </section>
+
+
+
+    <section class="slide">
+        <h2>Links</h2>
+        <ol>
+            <li>
+                <a href="https://github.com/jamiebuilds/babel-handbook">Babel Handbook</a>
+            </li>
+        </ol>
+    </section>
+
 
     <div class="progress"></div>
 
