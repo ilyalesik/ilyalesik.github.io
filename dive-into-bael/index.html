@@ -278,6 +278,31 @@
         </p>
     </section>
 
+    <section class="slide slide--center">
+        <h2>Plugins 🔌</h2>
+    </section>
+
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            Plugin is a function, that return <b>visitor</b>
+        </p>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="listing-simple-plugin"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-simple-plugin", `export default function({ types: t }) {
+  return {
+    visitor: {
+      BinaryExpression(path) {
+        // ...
+      }
+    }
+  };
+}`);
+        </script>
+    </section>
 
 
     <section class="slide">
