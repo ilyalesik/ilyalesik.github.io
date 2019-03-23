@@ -217,6 +217,7 @@
     <section class="slide slide--center">
         <h3>AST explorer</h3>
         <a target="_blank"
+           class="link"
            href="https://bit.ly/2TCLmDx">
             Demo 🚀
         </a>
@@ -302,6 +303,87 @@
   };
 }`);
         </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            Own plugin development... for what? 🤔
+        </p>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>
+            1️⃣ Code converters
+        </h3>
+    </section>
+
+    <section class="slide slide--center">
+        <a target="_blank"
+           class="link"
+           href="https://github.com/lm-a/gen-flow-files">
+            <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" /> gen-flow-files
+        </a>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Convert JS files with Flow to Flow definitions (.flow) files</p>
+    </section>
+
+    <section class="slide">
+        <p style="font-size: 1.25em">Input</p>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="gen-flow-files-1"></pre>
+        <script type="text/javascript">
+            insertJSX("gen-flow-files-1", `// @flow
+
+extract function foo(arg1: number): string {
+    console.log(arg1);
+    return "foo: " + arg1;
+}`);
+        </script>
+
+    </section>
+
+    <section class="slide">
+        <p style="font-size: 1.25em">Output</p>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="gen-flow-files-2"></pre>
+        <script type="text/javascript">
+            insertJSX("gen-flow-files-2", `// @flow
+
+declare extract function foo(arg1: number): string;`);
+        </script>
+
+    </section>
+
+    <section class="slide">
+        <p>Replace <b>Nodes</b> to new one through <b>@babel/types</b></p>
+        <ul>
+            <li>FunctionDeclaration → DeclareFunction</li>
+            <li>ArrowFunctionExpression → FunctionTypeAnnotation</li>
+            <li>ClassDeclaration → DeclareClass</li>
+            <li>ExportDeclaration → DeclareExportDeclaration</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <p>Other code converters based on Babel plugin:</p>
+        <ul>
+            <li style="display: flex; align-items: center">
+                <a target="_blank"
+                   class="link"
+                   href="https://github.com/joarwilk/flowgen">
+                    <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" />flowgen
+                </a>
+                — Generate flowtype definition files from TypeScript
+            </li>
+            <li style="display: flex; align-items: center">
+                <a target="_blank"
+                   class="link"
+                   href="https://github.com/Kiikurage/babel-plugin-flow-to-typescript">
+                    <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" />babel-plugin-flow-to-typescript
+                </a>
+            </li>
+        </ul>
+
     </section>
 
 

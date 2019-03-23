@@ -19,3 +19,14 @@
     flex-direction: column;
     padding-top: 0;
 }
+
+.slide .link {
+    color: var(--color-light);
+    display: flex;
+    align-items: center;
+}
+
+.link__icon {
+    height: 1em;
+    margin-right: .25em
+}
