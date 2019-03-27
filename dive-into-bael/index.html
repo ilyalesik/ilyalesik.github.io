@@ -388,7 +388,69 @@ declare extract function foo(arg1: number): string;`);
 
     <section class="slide slide--center">
         <h3>
-            2️⃣ Syntax sugar
+            2️⃣ Zero runtime CSS-in-JS
+        </h3>
+    </section>
+
+    <section class="slide">
+        <ul>
+            <li style="display: flex; align-items: center">
+                <a target="_blank"
+                   class="link"
+                   href="https://github.com/4Catalyzer/astroturf">
+                    <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" /> astroturf
+                </a>
+            </li>
+            <li style="display: flex; align-items: center">
+                <a target="_blank"
+                   class="link"
+                   href="https://github.com/callstack/linaria">
+                    <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" /> linaria
+                </a>
+            </li>
+            <li style="display: flex; align-items: center">
+                ...
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: .85em" class="language-jsx styled-code" id="linaria"></pre>
+        <script type="text/javascript">
+            insertJSX("linaria", `import { css } from 'linaria';
+
+// Write your styles in \`css\` tag
+const header = css\`
+  display: flex;
+\`;
+
+// Then use it as a class name
+<h1 class={header}>Hello world</h1>`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">Transformed to</p>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: .85em" class="language-jsx styled-code" id="linaria-1"></pre>
+        <script type="text/javascript">
+            insertJSX("linaria-1", `import { css } from 'linaria';
+
+const header = "_cd986x"; // css\`...\` replaced by random string
+
+<h1 class={header}>Hello world</h1>`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">Also Webpack plugin needed 🙁</p>
+    </section>
+
+    <section class="slide slide--center">
+        <h3>
+            3️⃣ Syntax sugar
         </h3>
     </section>
 
