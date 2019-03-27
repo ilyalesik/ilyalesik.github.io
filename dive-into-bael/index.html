@@ -386,6 +386,71 @@ declare extract function foo(arg1: number): string;`);
 
     </section>
 
+    <section class="slide slide--center">
+        <h3>
+            2️⃣ Syntax sugar
+        </h3>
+    </section>
+
+    <section class="slide slide--center">
+        <a target="_blank"
+           class="link"
+           href="https://github.com/ilyalesik/react-overrides">
+            <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" /> react-overrides
+        </a>
+    </section>
+
+    <section class="slide slide--center">
+        <pre style="font-size: .75em" class="language-jsx styled-code" id="react-overrides-1"></pre>
+        <script type="text/javascript">
+            insertJSX("react-overrides-1", `export const LinkButton = props => (
+  <CommonButton
+    {...props}
+    overrides={{
+      Container: { // 'Container' element of CommonButton
+        props: {
+          as: "a", // say the component to display itself as <a> tag. Typical for CSS-in-JS solutions.
+          href: props.href // add href attribute to element
+        }
+      }
+    }}
+  />
+);`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="react-overrides-2"></pre>
+        <script type="text/javascript">
+            insertJSX("react-overrides-2", `import o from "react-overrides";
+
+export const CommonButton = props => (
+    <Container {...o} onClick={props.onClick}>
+        <Text {...o}>{props.children}</Text>
+    </Container>
+);`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">Transformed to</p>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="react-overrides-3"></pre>
+        <script type="text/javascript">
+            insertJSX("react-overrides-3", `
+
+export const CommonButton = props => (
+    <Container {...props.overrides.Container.props} onClick={props.onClick}>
+        <Text {...props.overrides.Text.props}>{props.children}</Text>
+    </Container>
+);`);
+        </script>
+    </section>
+
+
+
 
     <section class="slide">
         <h2>Links</h2>
