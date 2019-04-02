@@ -96,7 +96,17 @@
         <h3>What i want to tell</h3>
         <ol>
             <li>How made Babel under the hood</li>
-            <li class="next">How write yor own plugins</li>
+            <li>How write yor own plugins</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h3>Why do we need plugins?</h3>
+        <ol>
+            <li>Make <b>code converters</b> like a boss 😎</li>
+            <li>Compile time libs (especially zero-runtime CSS-in-JS 💅)</li>
+            <li>Code analysis 🕵️ (ESLint, Prettier)</li>
+            <li>Etc.</li>
         </ol>
     </section>
 
@@ -120,8 +130,8 @@
         <h2>JavaScript compiler</h2>
         <ol>
             <li>Transform ES 2015+, <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/react-icon.png">JSX, <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/flow-icon.jpg">Flow, <img style="transform: translateY(.1em);height: 1em;" src="./pictures/typescript-icon.png"> TypeScript → ES5</li>
-            <li class="next">Polyfills, codemod</li>
-            <li class="next">Plugins 🔌</li>
+            <li>Polyfills, codemod</li>
+            <li>Plugins 🔌</li>
         </ol>
     </section>
 
@@ -233,7 +243,7 @@
 
     <section class="slide slide--center">
         <h3>Visitors</h3>
-        <p class="next">Methods defined for accepting particular <b>node types</b> in a tree</p>
+        <p>Methods defined for accepting particular <b>node types</b> in a tree</p>
     </section>
 
     <section class="slide slide--center">
@@ -447,71 +457,6 @@ const header = "_cd986x"; // css\`...\` replaced by random string
     <section class="slide slide--center">
         <p style="font-size: 1.5em">Also Webpack plugin needed 🙁</p>
     </section>
-
-    <section class="slide slide--center">
-        <h3>
-            3️⃣ Syntax sugar
-        </h3>
-    </section>
-
-    <section class="slide slide--center">
-        <a target="_blank"
-           class="link"
-           href="https://github.com/ilyalesik/react-overrides">
-            <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" /> react-overrides
-        </a>
-    </section>
-
-    <section class="slide slide--center">
-        <pre style="font-size: .75em" class="language-jsx styled-code" id="react-overrides-1"></pre>
-        <script type="text/javascript">
-            insertJSX("react-overrides-1", `export const LinkButton = props => (
-  <CommonButton
-    {...props}
-    overrides={{
-      Container: { // 'Container' element of CommonButton
-        props: {
-          as: "a", // say the component to display itself as <a> tag. Typical for CSS-in-JS solutions.
-          href: props.href // add href attribute to element
-        }
-      }
-    }}
-  />
-);`);
-        </script>
-    </section>
-
-    <section class="slide slide--center">
-        <pre style="font-size: 1em" class="language-jsx styled-code" id="react-overrides-2"></pre>
-        <script type="text/javascript">
-            insertJSX("react-overrides-2", `import o from "react-overrides";
-
-export const CommonButton = props => (
-    <Container {...o} onClick={props.onClick}>
-        <Text {...o}>{props.children}</Text>
-    </Container>
-);`);
-        </script>
-    </section>
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em">Transformed to</p>
-    </section>
-
-    <section class="slide">
-        <pre style="font-size: 1em" class="language-jsx styled-code" id="react-overrides-3"></pre>
-        <script type="text/javascript">
-            insertJSX("react-overrides-3", `
-
-export const CommonButton = props => (
-    <Container {...props.overrides.Container.props} onClick={props.onClick}>
-        <Text {...props.overrides.Text.props}>{props.children}</Text>
-    </Container>
-);`);
-        </script>
-    </section>
-
-
 
 
     <section class="slide">
