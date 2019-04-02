@@ -317,6 +317,28 @@
 
     <section class="slide slide--center">
         <p style="font-size: 1.5em;">
+            Plugin ordering
+        </p>
+    </section>
+
+    <section class="slide">
+        <h4>Babel are sync</h4>
+        <ul>
+            <li>Parallelism ❌</li>
+            <li>Async operations inside plugins ❌</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h4>Priority of execution:</h4>
+        <ol>
+            <li><b>Placement at tree</b>: higher nodes handled earlier</li>
+            <li>Position at <code>.babelrc</code></li>
+        </ol>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
             Own plugin development... for what? 🤔
         </p>
     </section>
