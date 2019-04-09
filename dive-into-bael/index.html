@@ -103,10 +103,6 @@
         <p style="font-size: 1.5em;">I'm Babel commiter</p>
     </section>
 
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em;">It's one of my 💛 technologies</p>
-    </section>
-
     <section class="slide">
         <h3>What i want to tell</h3>
         <ol>
@@ -420,7 +416,7 @@ declare extract function foo(arg1: number): string;`);
                    href="https://github.com/joarwilk/flowgen">
                     <img class="link__icon" alt="github icon" src="./pictures/github-icon.png" />flowgen
                 </a>
-                — Generate flowtype definition files from TypeScript
+                &nbsp;— Generate flowtype definition files from TypeScript
             </li>
             <li style="display: flex; align-items: center">
                 <a target="_blank"
@@ -502,7 +498,23 @@ const header = "_cd986x"; // css\`...\` replaced by random string
     </section>
 
     <section class="slide slide--center">
-        <h4>It's hard</h4>
+        <p style="font-size: 1.5em">All syntax inside <b>@babel/parser</b></p>
+    </section>
+
+    <section class="slide">
+        <p>babel-plugin-syntax-flow:</p>
+        <pre style="font-size: .85em" class="language-jsx styled-code" id="syntax-flow"></pre>
+        <script type="text/javascript">
+            insertJSX("syntax-flow", `export default declare((api, options) => {
+  return {
+    name: "syntax-flow",
+
+    manipulateOptions(opts, parserOpts) {
+      parserOpts.plugins.push(["flow", { all }]);
+    },
+  };
+});`);
+        </script>
     </section>
 
     <section class="slide slide--center">
