@@ -284,7 +284,16 @@
     <section class="slide">
         <h4>Transform</h4>
         <ol>
-            <li>Replacing a node</li>
+            <li>Replacing a node
+                <ol>
+                    <li>
+                        Monkey patching current node
+                    </li>
+                    <li>
+                        Or create new with <b>@babel/types</b>
+                    </li>
+                </ol>
+            </li>
             <li>Removing a node</li>
             <li>Replacing / Removing a parent</li>
         </ol>
@@ -324,6 +333,26 @@
   };
 }`);
         </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            All transforms inside Babel made by plugins
+        </p>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            <b>Presets</b> is just a set of plugins
+        </p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>@babel/preset-react → @babel/plugin-transform-react-jsx</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>JSXOpeningElement → MemberExpression</p>
     </section>
 
     <section class="slide slide--center">
