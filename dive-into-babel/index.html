@@ -114,8 +114,8 @@
     <section class="slide">
         <h3>Why do we need plugins?</h3>
         <ol>
-            <li>Make <b>code converters</b> like a boss 😎</li>
             <li>Compile time libs (especially zero-runtime CSS-in-JS 💅)</li>
+            <li>Make <b>code converters</b> like a boss 😎</li>
             <li>Code analysis 🕵️ (ESLint, Prettier)</li>
             <li>Etc.</li>
         </ol>
@@ -272,31 +272,77 @@
         <h3>Transformation Operations</h3>
     </section>
 
-    <section class="slide">
+    <section class="slide slide--center">
         <h4>Visiting</h4>
-        <ol>
-            <li>Get the Path of Sub-Node</li>
-            <li>Check if a node is a certain type</li>
-            <li>Find a specific <b>parent</b> path</li>
-        </ol>
     </section>
 
     <section class="slide">
+        <h5>Get the Path of Sub-Node</h5>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="path-of-sub-node"></pre>
+        <script type="text/javascript">
+            insertJSX("path-of-sub-node", `BinaryExpression(path) {
+  path.node.left;
+  path.node.right;
+  path.node.operator;
+}`);
+        </script>
+    </section>
+
+    <section class="slide">
+        <h5>Check if a node is a certain type</h5>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="check-type"></pre>
+        <script type="text/javascript">
+            insertJSX("check-type", `BinaryExpression(path) {
+  if (t.isIdentifier(path.node.left)) {
+    // ...
+  }
+}`);
+        </script>
+    </section>
+
+    <section class="slide">
+        <h5>Find a specific <b>parent</b> path</h5>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="find-parent-path"></pre>
+        <script type="text/javascript">
+            insertJSX("find-parent-path", `path.findParent((path) => path.isObjectExpression());`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
         <h4>Transform</h4>
-        <ol>
-            <li>Replacing a node
-                <ol>
-                    <li>
-                        Monkey patching current node
-                    </li>
-                    <li>
-                        Or create new with <b>@babel/types</b>
-                    </li>
-                </ol>
-            </li>
-            <li>Removing a node</li>
-            <li>Replacing / Removing a parent</li>
-        </ol>
+    </section>
+
+    <section class="slide">
+        <h5>Replacing a node</h5>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="replacing-node"></pre>
+        <script type="text/javascript">
+            insertJSX("replacing-node", `BinaryExpression(path) {
+  path.replaceWith(
+    t.binaryExpression("**", path.node.left, t.numberLiteral(2))
+  );
+}`);
+        </script>
+    </section>
+
+    <section class="slide">
+        <h5>Replacing a node</h5>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="removing-node"></pre>
+        <script type="text/javascript">
+            insertJSX("removing-node", `FunctionDeclaration(path) {
+  path.remove();
+}`);
+        </script>
+    </section>
+
+    <section class="slide">
+        <h5>Replacing / Removing a parent</h5>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="removing-parent"></pre>
+        <script type="text/javascript">
+            insertJSX("removing-parent", `BinaryExpression(path) {
+  path.parentPath.replaceWith(...);
+  path.parentPath.remove();
+}`);
+        </script>
     </section>
 
     <section class="slide slide--center">
@@ -325,6 +371,7 @@
         <script type="text/javascript">
             insertJSX("listing-simple-plugin", `export default function({ types: t }) {
   return {
+    name: "simple-plugin",
     visitor: {
       BinaryExpression(path) {
         // ...
