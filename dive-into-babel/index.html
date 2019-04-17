@@ -103,24 +103,6 @@
         <p style="font-size: 1.5em;">I'm Babel committer</p>
     </section>
 
-    <section class="slide">
-        <h3>What I want to tell</h3>
-        <ol>
-            <li>How made Babel under the hood</li>
-            <li>How to write your own plugins</li>
-        </ol>
-    </section>
-
-    <section class="slide">
-        <h3>Why do we need plugins?</h3>
-        <ol>
-            <li>Compile time libs (especially zero-runtime CSS-in-JS 💅)</li>
-            <li>Make <b>code converters</b> like a boss 😎</li>
-            <li>Code analysis 🕵️ (ESLint, Prettier)</li>
-            <li>Etc.</li>
-        </ol>
-    </section>
-
     <section class="slide slide--center">
         <h2>History 🏰</h2>
     </section>
@@ -141,7 +123,7 @@
         <h2>JavaScript compiler</h2>
         <ol>
             <li>Transform ES 2015+, <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/react-icon.png">JSX, <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/flow-icon.jpg">Flow, <img style="transform: translateY(.1em);height: 1em;" src="./pictures/typescript-icon.png"> TypeScript → ES5</li>
-            <li>Polyfills, codemod</li>
+            <li>Polyfills (especially for new <b>TC39</b> features), codemod</li>
             <li>Plugins 🔌</li>
         </ol>
     </section>
@@ -156,6 +138,13 @@
 
     <section class="slide slide--center">
         <h3>1️⃣ Parse</h3>
+    </section>
+
+    <section class="slide slide--center">
+        <h4>@babel/parser</h4>
+    </section>
+
+    <section class="slide slide--center">
         <p>Lexical Analysis + Syntactic Analysis</p>
     </section>
 
@@ -216,7 +205,7 @@
 
     <section class="slide">
         <p>AST Node</p>
-        <pre style="font-size: 1em" class="language-jsx styled-code" id="ast-node"></pre>
+        <pre style="font-size: .9em" class="language-jsx styled-code" id="ast-node"></pre>
         <script type="text/javascript">
             insertJSX("ast-node", `{
   type: "Literal", // or Identifier, CallExpression, etc.
@@ -265,12 +254,73 @@
     </section>
 
     <section class="slide slide--center">
-        <p style="font-size: 1.5em">Traverse the tree 🌳 recursively</p>
+        <h4>@babel/types</h4>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Create new Node: </p>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="t-create-node"></pre>
+        <script type="text/javascript">
+            insertJSX("t-create-node", `t.binaryExpression(...)`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Check Node type: </p>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="t-check-node"></pre>
+        <script type="text/javascript">
+            insertJSX("t-check-node", `t.isBinaryExpression(...)`);
+        </script>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            All transforms inside Babel made by plugins
+        </p>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            <b>Presets</b> is just a set of plugins
+        </p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>@babel/preset-react → @babel/plugin-transform-react-jsx</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em;">
+            A plugin is a function, that returning <b>visitor</b>
+        </p>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="listing-simple-plugin"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-simple-plugin", `export default function({ types: t, ...otherParams }) {
+  return {
+    name: "simple-plugin",
+    visitor: {
+      Identifier(path) {},
+      ASTNodeTypeHere(path) {}
+    }
+  };
+}`);
+        </script>
     </section>
 
     <section class="slide slide--center">
         <h3>Visitors</h3>
         <p>Methods defined for accepting particular <b>node types</b> in a tree</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">Babel traverse AST recursively through visitors</p>
+    </section>
+
+    <section class="slide slide--center">
+        <h4>@babel/traverse</h4>
     </section>
 
     <section class="slide slide--center">
@@ -283,6 +333,11 @@
 };`);
         </script>
     </section>
+
+    <section class="slide slide--center">
+        <p>The <b>path</b> is an AST Node wrapper with some methods</p>
+    </section>
+
 
     <section class="slide slide--center">
         <h3>Transformation Operations</h3>
@@ -340,8 +395,16 @@
         </script>
     </section>
 
+    <section class="slide slide--center">
+        <pre style="font-size: 0.8em" class="language-jsx styled-code" id="transform-react-jsx"></pre>
+        <script type="text/javascript">
+            insertJSX("transform-react-jsx", `<Component>...</Component> → React.createElement(Component, ...)`);
+        </script>
+        <p>JSXElement → MemberExpression</p>
+    </section>
+
     <section class="slide">
-        <h5>Replacing a node</h5>
+        <h5>Removing a node</h5>
         <pre style="font-size: 1em" class="language-jsx styled-code" id="removing-node"></pre>
         <script type="text/javascript">
             insertJSX("removing-node", `FunctionDeclaration(path) {
@@ -362,67 +425,6 @@
     </section>
 
     <section class="slide slide--center">
-        <h3>3️⃣ Generate</h3>
-    </section>
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em;">
-            Generate <b>new</b> code from changed AST
-        </p>
-    </section>
-
-    <section class="slide slide--center">
-        <h2>Plugins 🔌</h2>
-    </section>
-
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em;">
-            A plugin is a function, that return <b>visitor</b>
-        </p>
-    </section>
-
-    <section class="slide">
-        <pre style="font-size: 1em" class="language-jsx styled-code" id="listing-simple-plugin"></pre>
-        <script type="text/javascript">
-            insertJSX("listing-simple-plugin", `export default function({ types: t }) {
-  return {
-    name: "simple-plugin",
-    visitor: {
-      BinaryExpression(path) {
-        // ...
-      }
-    }
-  };
-}`);
-        </script>
-    </section>
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em;">
-            All transforms inside Babel made by plugins
-        </p>
-    </section>
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em;">
-            <b>Presets</b> is just a set of plugins
-        </p>
-    </section>
-
-    <section class="slide slide--center">
-        <p>@babel/preset-react → @babel/plugin-transform-react-jsx</p>
-    </section>
-
-    <section class="slide slide--center">
-        <pre style="font-size: 0.8em" class="language-jsx styled-code" id="transform-react-jsx"></pre>
-        <script type="text/javascript">
-            insertJSX("transform-react-jsx", `<Component>...</Component> → React.createElement(Component, ...)`);
-        </script>
-        <p>JSXElement → MemberExpression</p>
-    </section>
-
-    <section class="slide slide--center">
         <p style="font-size: 1.5em;">
             Plugin ordering
         </p>
@@ -432,8 +434,8 @@
         <h4>Babel is sync</h4>
         <ul>
             <li>Visitors are applied sequentially. ✅</li>
-            <li>Parallelism ❌</li>
-            <li>Async operations inside plugins ❌</li>
+            <li>No parallelism ❌</li>
+            <li>No async operations inside plugins ❌</li>
         </ul>
     </section>
 
@@ -446,9 +448,21 @@
     </section>
 
     <section class="slide slide--center">
+        <h3>3️⃣ Generate</h3>
+    </section>
+
+    <section class="slide slide--center">
+        <h4>@babel/generator</h4>
+    </section>
+
+    <section class="slide slide--center">
         <p style="font-size: 1.5em;">
-            Own plugin development... for what? 🤔
+            Generate <b>new</b> code from changed AST
         </p>
+    </section>
+
+    <section class="slide slide--center">
+        <h2>Custom Plugins 🔌</h2>
     </section>
 
     <section class="slide slide--center">
@@ -683,6 +697,16 @@ const header = "_cd986x"; // css\`...\` replaced by random string
     </section>
 
     <section class="slide slide--center">
+        <h3>
+            Testing
+        </h3>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">Snapshots</p>
+    </section>
+
+    <section class="slide slide--center">
         <h2>Contributing</h2>
     </section>
 
@@ -707,7 +731,11 @@ const header = "_cd986x"; // css\`...\` replaced by random string
     </section>
 
     <section class="slide slide--center">
-        <img src="./pictures/hw-gfi.png" alt="help wanted and good first issue">
+        <img height="120px" src="./pictures/hw-gfi.png" alt="help wanted and good first issue">
+    </section>
+
+    <section class="slide slide--center">
+        <img height="400px" src="./pictures/pr.png" alt="pull request">
     </section>
 
 
