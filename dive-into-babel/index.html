@@ -119,13 +119,40 @@
         <h2>What is Babel? 🤔</h2>
     </section>
 
-    <section class="slide">
+    <section class="slide slide--center">
         <h2>JavaScript compiler</h2>
-        <ol>
-            <li>Transform ES 2015+, <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/react-icon.png">JSX, <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/flow-icon.jpg">Flow, <img style="transform: translateY(.1em);height: 1em;" src="./pictures/typescript-icon.png"> TypeScript → ES5</li>
-            <li>Polyfills (especially for new <b>TC39</b> features), codemod</li>
-            <li>Plugins 🔌</li>
-        </ol>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Written on JavaScript</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Intended to transform <b>"extended JS"</b> code into supported JS code</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Transform ES 2015+ → ES5</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Transform <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/flow-icon.jpg">Flow,&nbsp;<img style="transform: translateY(.1em);height: 1em;" src="./pictures/typescript-icon.png"> TypeScript</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Transform <img style="transform: translateY(.1em);height: 1.1em;" src="./pictures/react-icon.png">JSX</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Polyfills (especially for new <b>TC39</b> features)</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Codemod</p>
+    </section>
+
+    <section class="slide slide--center">
+        <p>Extend with custom <b>Plugins</b> 🔌</p>
     </section>
 
     <section class="slide slide--center">
@@ -258,7 +285,7 @@
     </section>
 
     <section class="slide slide--center">
-        <p>Create new Node: </p>
+        <p>Constructors for all types of Nodes: </p>
         <pre style="font-size: 1em" class="language-jsx styled-code" id="t-create-node"></pre>
         <script type="text/javascript">
             insertJSX("t-create-node", `t.binaryExpression(...)`);
@@ -266,7 +293,7 @@
     </section>
 
     <section class="slide slide--center">
-        <p>Check Node type: </p>
+        <p>Predicates for all types of Nodes: </p>
         <pre style="font-size: 1em" class="language-jsx styled-code" id="t-check-node"></pre>
         <script type="text/javascript">
             insertJSX("t-check-node", `t.isBinaryExpression(...)`);
@@ -295,6 +322,11 @@
         </p>
     </section>
 
+    <section class="slide slide--center">
+        <h3>Visitors</h3>
+        <p>Methods defined for accepting particular <b>node types</b> in a tree</p>
+    </section>
+
     <section class="slide">
         <pre style="font-size: 1em" class="language-jsx styled-code" id="listing-simple-plugin"></pre>
         <script type="text/javascript">
@@ -311,12 +343,7 @@
     </section>
 
     <section class="slide slide--center">
-        <h3>Visitors</h3>
-        <p>Methods defined for accepting particular <b>node types</b> in a tree</p>
-    </section>
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em">Babel traverse AST recursively through visitors</p>
+        <p>Babel traverse AST recursively</p>
     </section>
 
     <section class="slide slide--center">
@@ -324,20 +351,12 @@
     </section>
 
     <section class="slide slide--center">
-        <pre style="font-size: 1em" class="language-jsx styled-code" id="listing-my-visitor"></pre>
-        <script type="text/javascript">
-            insertJSX("listing-my-visitor", `const MyVisitor = {
-  BinaryExpression(path) {
-    console.log("Visiting: " + path.node.operator);
-  }
-};`);
-        </script>
+        <p>Babel traversal will call the <b>Identifier()</b> method for every <b>Identifier</b> in the tree.</p>
     </section>
 
     <section class="slide slide--center">
         <p>The <b>path</b> is an AST Node wrapper with some methods</p>
     </section>
-
 
     <section class="slide slide--center">
         <h3>Transformation Operations</h3>
@@ -354,7 +373,7 @@
             insertJSX("path-of-sub-node", `BinaryExpression(path) {
   path.node.left;
   path.node.right;
-  path.node.operator;
+  console.log(path.node.operator);
 }`);
         </script>
     </section>
@@ -603,7 +622,7 @@ declare extract function foo(arg1: number): string;`);
 
     <section class="slide slide--center">
         <h3>
-            3️⃣ Zero runtime CSS-in-JS
+            3️⃣ Zero runtime CSS-in-JS 💅
         </h3>
     </section>
 
@@ -665,8 +684,12 @@ const header = "_cd986x"; // css\`...\` replaced by random string
 
     <section class="slide slide--center">
         <h3>
-            4️⃣ Something else?
+            4️⃣ Code analysis 🕵️
         </h3>
+    </section>
+
+    <section class="slide slide--center">
+        <p style="font-size: 1.5em">ESLint, Prettier</p>
     </section>
 
 
@@ -694,16 +717,6 @@ const header = "_cd986x"; // css\`...\` replaced by random string
   };
 });`);
         </script>
-    </section>
-
-    <section class="slide slide--center">
-        <h3>
-            Testing
-        </h3>
-    </section>
-
-    <section class="slide slide--center">
-        <p style="font-size: 1.5em">Snapshots</p>
     </section>
 
     <section class="slide slide--center">
