@@ -126,11 +126,11 @@
     </section>
 
     <section class="slide slide--center">
-        <img src="./pictures/6to5.png" />
+        <img src="./pictures/babel-first-commit.png" />
     </section>
 
     <section class="slide slide--center">
-        <img src="./pictures/babel-first-commit.png" />
+        <img src="./pictures/6to5.png" />
     </section>
 
     <section class="slide slide--center">
@@ -215,24 +215,40 @@
     </section>
 
     <section class="slide">
-        <pre style="font-size: .75em" class="language-jsx styled-code" id="listing-ast-example"></pre>
+        <p>AST Node</p>
+        <pre style="font-size: 1em" class="language-jsx styled-code" id="ast-node"></pre>
         <script type="text/javascript">
-            insertJSX("listing-ast-example", `{
-  type: "ExpressionStatement",
-  expression: {
-    type: "BinaryExpression",
-    operator: "+",
-    left: {
-      type: "Literal",
-      value: 1
-    },
-    right: {
-      type: "Literal",
-      value: 1
-    }
-  }
+            insertJSX("ast-node", `{
+  type: "Literal", // or Identifier, CallExpression, etc.
+  ... // additional props
 }`);
         </script>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: .7em" class="language-jsx styled-code" id="listing-ast-example"></pre>
+        <script type="text/javascript">
+            insertJSX("listing-ast-example", `{
+  type: "Program",
+  body: [{
+    type: "ExpressionStatement",
+      expression: {
+        type: "BinaryExpression",
+        operator: "+",
+        left: {
+          type: "Literal",
+          value: 1
+        },
+        right: {
+          type: "Literal",
+          value: 1
+        }
+      }
+    }]
+}
+  `);
+        </script>
+        <p style="position: absolute; top: 80px; right: 200px;font-size: 2em;">1 + 1</p>
     </section>
 
     <section class="slide slide--center">
@@ -351,7 +367,7 @@
 
     <section class="slide slide--center">
         <p style="font-size: 1.5em;">
-            Generate code from AST
+            Generate <b>new</b> code from changed AST
         </p>
     </section>
 
@@ -399,7 +415,11 @@
     </section>
 
     <section class="slide slide--center">
-        <p>JSXOpeningElement → MemberExpression</p>
+        <pre style="font-size: 0.8em" class="language-jsx styled-code" id="transform-react-jsx"></pre>
+        <script type="text/javascript">
+            insertJSX("transform-react-jsx", `<Component>...</Component> → React.createElement(Component, ...)`);
+        </script>
+        <p>JSXElement → MemberExpression</p>
     </section>
 
     <section class="slide slide--center">
@@ -411,6 +431,7 @@
     <section class="slide">
         <h4>Babel is sync</h4>
         <ul>
+            <li>Visitors are applied sequentially. ✅</li>
             <li>Parallelism ❌</li>
             <li>Async operations inside plugins ❌</li>
         </ul>
@@ -605,7 +626,7 @@ const header = css\`
 \`;
 
 // Then use it as a class name
-<h1 class={header}>Hello world</h1>`);
+<h1 className={header}>Hello world</h1>`);
         </script>
     </section>
 
@@ -620,7 +641,7 @@ const header = css\`
 
 const header = "_cd986x"; // css\`...\` replaced by random string
 
-<h1 class={header}>Hello world</h1>`);
+<h1 className={header}>Hello world</h1>`);
         </script>
     </section>
 
